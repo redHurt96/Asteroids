@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="352b035a-4424-4c11-9933-4598baefaa0c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Common.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Common/Tag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Common/Tag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Friction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Friction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/ObjectTag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Position.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Position.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Rotation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Rotation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Velocity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Velocity.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateShipSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateShipSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/View.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/View.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/PresentationBootstrapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/PresentationBootstrapper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/CreateViewSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/CreateViewSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/UpdateViewSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/UpdateViewSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/EntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/TestSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/TestSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EcsCore/EcsWorld.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EcsCore/EcsWorld.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EcsCore/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EcsCore/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EcsCore/EntityExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EcsCore/EntityExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EcsCore/Filter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EcsCore/Filter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EcsCore/FilterExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EcsCore/FilterExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EcsCore/SystemsArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EcsCore/SystemsArray.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EcsCore/SystemsArrayExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EcsCore/SystemsArrayExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/ObjectTag.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../VRDoctor/Assets/Scripts/NetworkElements/Displayers/LoadingDisplayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/View.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29quIq3KtFod0rSn6x339QyqtMK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="352b035a-4424-4c11-9933-4598baefaa0c" name="Changes" comment="" />
+      <created>1653852863031</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653852863031</updated>
+      <workItem from="1653852869132" duration="7488000" />
+      <workItem from="1653897421857" duration="3461000" />
+      <workItem from="1653914556282" duration="4679000" />
+      <workItem from="1653924577970" duration="2662000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
