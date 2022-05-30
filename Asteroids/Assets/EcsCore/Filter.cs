@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EcsCore
 {
     public sealed class Filter
     {
-        internal readonly EcsWorld World;
-        internal readonly Dictionary<Type, Mode> Conditions = new();
+        private readonly EcsWorld _world;
+        private readonly Dictionary<Type, Mode> _conditions = new();
 
-        internal static readonly Dictionary<Mode, Func<Entity, Type, bool>> ModeConditions = new()
+        private static readonly Dictionary<Mode, Func<Entity, Type, bool>> s_modeConditions = new()
         {
             [Mode.Include] = (entity, type) => entity.Has(type),
             [Mode.Exclude] = (entity, type) => !entity.Has(type),
@@ -16,7 +17,32 @@ namespace EcsCore
 
         public Filter(EcsWorld world)
         {
-            World = world;
+            _world = world;
+        }
+
+        public Filter Include<T>() where T : IComponent
+        {
+            _conditions.Add(typeof(T), Mode.Include);
+            return this;
+        }
+
+        public Filter Exclude<T>() where T : IComponent
+        {
+            _conditions.Add(typeof(T), Mode.Exclude);
+            return this;
+        }
+
+        public void ForEach(Action<Entity> forEachAction)
+        {
+            var entities = _world.Entities;
+
+            foreach (var (type, mode) in _conditions)
+                entities = entities
+                    .Where(x => s_modeConditions[mode].Invoke(x, type))
+                    .ToList();
+
+            foreach (Entity entity in entities) 
+                forEachAction.Invoke(entity);
         }
 
         internal enum Mode
