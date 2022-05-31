@@ -1,7 +1,7 @@
 ﻿using Asteroids.Domain.Common;
 using EcsCore;
 
-namespace Asteroids.Domain.Components
+namespace Asteroids.Domain.Components.Common
 {
     public class ObjectTag : IComponent
     {

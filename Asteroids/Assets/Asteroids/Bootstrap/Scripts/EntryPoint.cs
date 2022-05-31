@@ -19,6 +19,7 @@ namespace Asteroids.Bootstrap
         private IInputService _inputService;
         private ITimeService _timeService;
         private IMapBorderService _mapBorderService;
+        private IRandomService _randomService;
 
         [SerializeField] private Camera _camera;
 
@@ -45,17 +46,18 @@ namespace Asteroids.Bootstrap
             _inputService = new InputService();
             _timeService = new TimeService();
             _mapBorderService = new MapBorderService(_camera);
+            _randomService = new RandomService();
         }
 
         private void SetupModel()
         {
-            _modelBootstrapper = new ModelBootstrapper(_systems, _inputService, _timeService, _mapBorderService);
+            _modelBootstrapper = new ModelBootstrapper(_systems, _inputService, _timeService, _mapBorderService, _randomService);
             _modelBootstrapper.Setup();
         }
 
         private void SetupPresentations()
         {
-            _presentationBootstrapper = new PresentationBootstrapper(_systems);
+            _presentationBootstrapper = new PresentationBootstrapper(_systems, _randomService, _timeService);
             _presentationBootstrapper.Setup();
         }
     }

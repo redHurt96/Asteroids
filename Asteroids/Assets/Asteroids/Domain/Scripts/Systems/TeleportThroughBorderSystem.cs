@@ -1,5 +1,6 @@
 ﻿using System;
 using Asteroids.Domain.Components;
+using Asteroids.Domain.Components.Common;
 using Asteroids.Domain.Services;
 using EcsCore;
 

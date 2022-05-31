@@ -1,6 +1,6 @@
 ﻿using EcsCore;
 
-namespace Asteroids.Domain.Components
+namespace Asteroids.Domain.Components.Common
 {
     public class Position : IComponent
     {

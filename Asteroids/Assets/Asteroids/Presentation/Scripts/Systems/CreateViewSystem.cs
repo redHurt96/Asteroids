@@ -1,4 +1,4 @@
-﻿using Asteroids.Domain.Components;
+﻿using Asteroids.Domain.Components.Common;
 using Asteroids.Presentation.Components;
 using EcsCore;
 using UnityEngine;

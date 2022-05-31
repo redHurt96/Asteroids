@@ -10,22 +10,35 @@ namespace Asteroids.Domain
         private readonly IInputService _inputService;
         private readonly ITimeService _timeService;
         private readonly IMapBorderService _mapBorderService;
+        private readonly IRandomService _randomService;
 
-        public ModelBootstrapper(SystemsArray systems, IInputService inputService, ITimeService timeService, IMapBorderService mapBorderService)
+        public ModelBootstrapper(
+            SystemsArray systems, 
+            IInputService inputService, 
+            ITimeService timeService, 
+            IMapBorderService mapBorderService,
+            IRandomService randomService)
         {
             _systems = systems;
             _inputService = inputService;
             _timeService = timeService;
             _mapBorderService = mapBorderService;
+            _randomService = randomService;
         }
 
         public void Setup() =>
             _systems
+                .Add(new CollisionSystem())
+                .Add(new DestroyByCollisionSystem())
+
                 .Add(new CreateShipSystem())
                 .Add(new AccelerationSystem(_inputService, _timeService))
                 .Add(new RotationSystem(_inputService, _timeService))
                 .Add(new MoveShipSystem(_timeService))
                 .Add(new FrictionSystem(_inputService, _timeService))
-                .Add(new TeleportThroughBorderSystem(_mapBorderService));
+                .Add(new TeleportThroughBorderSystem(_mapBorderService))
+
+                .Add(new CreateAsteroidIntentSystem(_timeService, _mapBorderService, _randomService))
+                .Add(new CreateAsteroidSystem(_randomService));
     }
 }

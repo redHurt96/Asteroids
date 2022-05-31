@@ -3,30 +3,29 @@ using System.Collections.Generic;
 
 namespace EcsCore
 {
-    public sealed class Entity
+    public sealed class Entity : IDisposable
     {
-        internal event Action Disposed;
+        public event Action<Entity> Disposed;
+        internal event Action<Entity> CanDispose;
 
-        internal readonly List<IComponent> Components;
+        private readonly List<IComponent> _components;
 
-        internal Entity()
-        {
-            Components = new();
-        }
+        internal Entity() => 
+            _components = new();
 
         public T Get<T>() where T : IComponent
         {
             if (!Has<T>())
                 throw new Exception($"Entity doesn't contain a component with type {typeof(T)}");
 
-            return (T) Components.Find(x => x.GetType() == typeof(T));
+            return (T) _components.Find(x => x.GetType() == typeof(T));
         }
 
         public bool Has(Type type) =>
-            Components.Find(x => x.GetType() == type) != null;
+            _components.Find(x => x.GetType() == type) != null;
         
         public bool Has<T>() where T : IComponent => 
-            Components.Find(x => x.GetType() == typeof(T)) != null;
+            _components.Find(x => x.GetType() == typeof(T)) != null;
 
         public Entity Add<T>() where T : IComponent, new()
         {
@@ -34,7 +33,7 @@ namespace EcsCore
                 throw new Exception($"Entity already contain a component with type {typeof(T)}. You cannot add it twice");
 
             T component = new T();
-            Components.Add(component);
+            _components.Add(component);
 
             return this;
         }
@@ -42,10 +41,13 @@ namespace EcsCore
         public void Remove<T>() where T : IComponent
         {
             if (Has<T>())
-                Components.Remove(Get<T>());
+                _components.Remove(Get<T>());
 
-            if (Components.Count == 0)
-                Disposed?.Invoke();
+            if (_components.Count == 0)
+                CanDispose?.Invoke(this);
         }
+
+        public void Dispose() => 
+            Disposed?.Invoke(this);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Asteroids.Domain.Common;
-using Asteroids.Domain.Components;
+using Asteroids.Domain.Components.Common;
+using Asteroids.Domain.Components.SpaceShip;
 using EcsCore;
 
 namespace Asteroids.Domain.Systems
@@ -23,7 +24,9 @@ namespace Asteroids.Domain.Systems
                 .Add<AccelerationSpeed>()
                 .Add<Friction>()
                 .Add<CanRotateByPlayer>()
-                .Add<CanAccelerateByPlayer>();
+                .Add<SphereCollider>()
+                .Add<CanAccelerateByPlayer>()
+                .Add<PlayerLayer>();
 
         private static void Setup(Entity ship)
         {
@@ -32,6 +35,7 @@ namespace Asteroids.Domain.Systems
             ship.Get<RotationSpeed>().Amount = 180f;
             ship.Get<AccelerationSpeed>().Amount = 15f;
             ship.Get<Friction>().Amount = 15f;
+            ship.Get<SphereCollider>().Radius = 2f;
         }
     }
 }
