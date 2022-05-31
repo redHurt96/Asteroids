@@ -43,7 +43,7 @@ namespace Asteroids.Presentation.Systems
             view.name = tag;
             view.transform.position = new Vector3(position.X, position.Y, 0f);
             view.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            view.GetComponent<SpriteRenderer>().sprite = sprite;
+            view.GetComponentInChildren<SpriteRenderer>().sprite = sprite;
         }
 
         private static void AddViewComponent(Entity entity, GameObject view)
