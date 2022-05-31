@@ -4,7 +4,6 @@ using EcsCore;
 
 namespace Asteroids.Domain.Systems
 {
-    //TODO: добавить в ecs возможность добавлять сразу подготовленные компоненты
     public class CreateShipSystem : IInitSystem
     {
         public void Init(EcsWorld world)
@@ -13,9 +12,8 @@ namespace Asteroids.Domain.Systems
             Setup(ship);
         }
 
-        private static Entity CreateShip(EcsWorld world)
-        {
-            var ship = world.NewEntity()
+        private static Entity CreateShip(EcsWorld world) =>
+            world.NewEntity()
                 .Add<ObjectTag>()
                 .Add<Position>()
                 .Add<Rotation>()
@@ -26,16 +24,14 @@ namespace Asteroids.Domain.Systems
                 .Add<Friction>()
                 .Add<CanRotateByPlayer>()
                 .Add<CanAccelerateByPlayer>();
-            return ship;
-        }
 
         private static void Setup(Entity ship)
         {
             ship.Get<ObjectTag>().Tag = Tag.SpaceShip;
-            ship.Get<MaxVelocity>().Amount = 15f;
-            ship.Get<RotationSpeed>().Amount = 120f;
-            ship.Get<AccelerationSpeed>().Amount = 10f;
-            ship.Get<Friction>().Amount = 10f;
+            ship.Get<MaxVelocity>().Amount = 18f;
+            ship.Get<RotationSpeed>().Amount = 180f;
+            ship.Get<AccelerationSpeed>().Amount = 15f;
+            ship.Get<Friction>().Amount = 15f;
         }
     }
 }

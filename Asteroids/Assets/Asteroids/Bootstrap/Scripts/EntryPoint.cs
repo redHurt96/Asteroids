@@ -18,6 +18,9 @@ namespace Asteroids.Bootstrap
 
         private IInputService _inputService;
         private ITimeService _timeService;
+        private IMapBorderService _mapBorderService;
+
+        [SerializeField] private Camera _camera;
 
         private void Start()
         {
@@ -41,11 +44,12 @@ namespace Asteroids.Bootstrap
         {
             _inputService = new InputService();
             _timeService = new TimeService();
+            _mapBorderService = new MapBorderService(_camera);
         }
 
         private void SetupModel()
         {
-            _modelBootstrapper = new ModelBootstrapper(_systems, _inputService, _timeService);
+            _modelBootstrapper = new ModelBootstrapper(_systems, _inputService, _timeService, _mapBorderService);
             _modelBootstrapper.Setup();
         }
 

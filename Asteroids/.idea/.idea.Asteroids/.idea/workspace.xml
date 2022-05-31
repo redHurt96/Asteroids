@@ -2,19 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="352b035a-4424-4c11-9933-4598baefaa0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/FrictionSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/FrictionSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Services/IMapBorderService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Services/IMapBorderService.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/TeleportThroughBorderSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/TeleportThroughBorderSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Services/MapBorderService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Services/MapBorderService.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Asteroids.Domain.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Asteroids.Domain.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Friction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Friction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Velocity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Velocity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/EntryPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/ModelBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/ModelBootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/AccelerationSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/AccelerationSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Services/IInputService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Services/IInputService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateShipSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateShipSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/MoveShipSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/MoveShipSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/TestSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/TestSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/FrictionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/FrictionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/UpdateViewSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/UpdateViewSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroids.Domain.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroids.Domain.csproj.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +37,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/ObjectTag.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.3.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../VRDoctor/Assets/Scripts/NetworkElements/Displayers/LoadingDisplayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.3.0/InputSystem/Utilities/Observables/TakeNObservable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.3.0/InputSystem/Utilities/FourCC.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/View.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,10 +76,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11024">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="24176">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="11024" />
+      <option name="pid" value="24176" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -94,6 +99,7 @@
       <workItem from="1653897421857" duration="3461000" />
       <workItem from="1653914556282" duration="4679000" />
       <workItem from="1653924577970" duration="12146000" />
+      <workItem from="1654020150667" duration="4199000" />
     </task>
     <servers />
   </component>

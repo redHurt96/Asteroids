@@ -1,5 +1,3 @@
-using System;
-
 namespace Asteroids.Domain.Services
 {
     public interface IInputService

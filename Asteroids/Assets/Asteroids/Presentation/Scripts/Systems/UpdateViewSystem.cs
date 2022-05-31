@@ -25,6 +25,8 @@ namespace Asteroids.Presentation.Systems
 
                 view.position = new Vector3(position.X, position.Y, 0f);
                 view.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                
+                Debug.Log("Velocity = " + entity.Get<Velocity>().Amount);
             });
         }
     }
