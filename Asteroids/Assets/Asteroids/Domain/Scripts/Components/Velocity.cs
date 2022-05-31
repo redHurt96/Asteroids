@@ -4,7 +4,6 @@ namespace Asteroids.Domain.Components
 {
     public class Velocity : IComponent
     {
-        public float X;
-        public float Y;
+        public float Amount;
     }
 }

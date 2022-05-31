@@ -1,5 +1,4 @@
-﻿using System;
-using Asteroids.Domain.Components;
+﻿using Asteroids.Domain.Components;
 using Asteroids.Domain.Services;
 using EcsCore;
 
@@ -8,10 +7,14 @@ namespace Asteroids.Domain.Systems
     public class AccelerationSystem : IInitSystem, IUpdateSystem
     {
         private readonly IInputService _inputService;
+        private readonly ITimeService _timeService;
         private Filter _filter;
 
-        public AccelerationSystem(IInputService inputService) => 
+        public AccelerationSystem(IInputService inputService, ITimeService timeService)
+        {
             _inputService = inputService;
+            _timeService = timeService;
+        }
 
         public void Init(EcsWorld world)
         {
@@ -19,43 +22,29 @@ namespace Asteroids.Domain.Systems
                 .Include<CanAccelerateByPlayer>()
                 .Include<Velocity>()
                 .Include<MaxVelocity>()
-                .Include<AccelerationSpeed>()
-                .Include<Rotation>();
+                .Include<AccelerationSpeed>();
         }
 
         public void Update()
         {
             if (_inputService.IsShipAccelerated)
                 Accelerate();
-            else
-                StopAcceleration();
         }
 
         private void Accelerate()
         {
+            float deltaTime = _timeService.DeltaTime;
+
             _filter.ForEach(entity =>
             {
-                var angle = entity.Get<Rotation>().Angle;
-                var angleRad = angle * Math.PI / 180;
-                var x = Math.Cos(angleRad);
-                var y = Math.Sin(angleRad);
                 Velocity velocity = entity.Get<Velocity>();
                 float accelerationSpeed = entity.Get<AccelerationSpeed>().Amount;
                 float maxVelocity = entity.Get<MaxVelocity>().Amount;
 
-                velocity.X = (float) x * maxVelocity;
-                velocity.Y = (float) y * maxVelocity;
-            });
-        }
+                velocity.Amount += accelerationSpeed * deltaTime;
 
-        private void StopAcceleration()
-        {
-            _filter.ForEach(entity =>
-            {
-                Velocity velocity = entity.Get<Velocity>();
-
-                velocity.X = 0f;
-                velocity.Y = 0f;
+                if (velocity.Amount > maxVelocity)
+                    velocity.Amount = maxVelocity;
             });
         }
     }

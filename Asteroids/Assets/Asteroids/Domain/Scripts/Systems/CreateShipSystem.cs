@@ -9,6 +9,12 @@ namespace Asteroids.Domain.Systems
     {
         public void Init(EcsWorld world)
         {
+            var ship = CreateShip(world);
+            Setup(ship);
+        }
+
+        private static Entity CreateShip(EcsWorld world)
+        {
             var ship = world.NewEntity()
                 .Add<ObjectTag>()
                 .Add<Position>()
@@ -20,10 +26,16 @@ namespace Asteroids.Domain.Systems
                 .Add<Friction>()
                 .Add<CanRotateByPlayer>()
                 .Add<CanAccelerateByPlayer>();
+            return ship;
+        }
 
+        private static void Setup(Entity ship)
+        {
             ship.Get<ObjectTag>().Tag = Tag.SpaceShip;
             ship.Get<MaxVelocity>().Amount = 15f;
             ship.Get<RotationSpeed>().Amount = 120f;
+            ship.Get<AccelerationSpeed>().Amount = 10f;
+            ship.Get<Friction>().Amount = 10f;
         }
     }
 }

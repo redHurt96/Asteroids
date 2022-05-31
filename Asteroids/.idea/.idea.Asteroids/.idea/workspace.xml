@@ -2,38 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="352b035a-4424-4c11-9933-4598baefaa0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/AccelerationSpeed.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/AccelerationSpeed.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/CanAccelerateByPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/CanAccelerateByPlayer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/CanRotateByPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/CanRotateByPlayer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/MaxVelocity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/MaxVelocity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/RotationSpeed.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/RotationSpeed.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Services/ITimeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Services/ITimeService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/AccelerationSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/AccelerationSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/MoveShipSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/MoveShipSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/RotationSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/RotationSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Services/TimeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Services/TimeService.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/FrictionSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/FrictionSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/Asteroids.Bootstrap.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/Asteroids.Bootstrap.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Velocity.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Velocity.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Asteroids.Domain.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Asteroids.Domain.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Friction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Friction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Velocity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Velocity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/ModelBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/ModelBootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/AccelerationSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/AccelerationSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateShipSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateShipSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/DefaultView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/DefaultView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/CreateViewSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/CreateViewSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/MoveShipSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/MoveShipSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/TestSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/TestSystem.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +36,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/ObjectTag.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.3.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../VRDoctor/Assets/Scripts/NetworkElements/Displayers/LoadingDisplayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.3.0/InputSystem/Utilities/Observables/TakeNObservable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.3.0/InputSystem/Utilities/FourCC.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/View.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.3.0/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -111,7 +93,7 @@
       <workItem from="1653852869132" duration="7488000" />
       <workItem from="1653897421857" duration="3461000" />
       <workItem from="1653914556282" duration="4679000" />
-      <workItem from="1653924577970" duration="8961000" />
+      <workItem from="1653924577970" duration="12146000" />
     </task>
     <servers />
   </component>

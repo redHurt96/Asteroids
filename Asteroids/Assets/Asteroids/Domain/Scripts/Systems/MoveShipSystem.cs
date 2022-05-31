@@ -1,4 +1,5 @@
-﻿using Asteroids.Domain.Components;
+﻿using System;
+using Asteroids.Domain.Components;
 using Asteroids.Domain.Services;
 using EcsCore;
 
@@ -20,14 +21,18 @@ namespace Asteroids.Domain.Systems
         public void Update()
         {
             float deltaTime = _timeService.DeltaTime;
-            
+
             _filter.ForEach(entity =>
             {
                 Position position = entity.Get<Position>();
-                Velocity velocity = entity.Get<Velocity>();
+                float velocity = entity.Get<Velocity>().Amount;
+                float angle = entity.Get<Rotation>().Angle;
+                double angleRad = angle * Math.PI / 180;
+                float x = (float) Math.Cos(angleRad);
+                float y = (float) Math.Sin(angleRad);
 
-                position.X += velocity.X * deltaTime;
-                position.Y += velocity.Y * deltaTime;
+                position.X += x * velocity * deltaTime;
+                position.Y += y * velocity * deltaTime;
             });
         }
     }

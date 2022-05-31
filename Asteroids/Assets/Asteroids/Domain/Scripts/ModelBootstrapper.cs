@@ -20,8 +20,9 @@ namespace Asteroids.Domain
         public void Setup() =>
             _systems
                 .Add(new CreateShipSystem())
-                .Add(new AccelerationSystem(_inputService))
+                .Add(new AccelerationSystem(_inputService, _timeService))
                 .Add(new RotationSystem(_inputService, _timeService))
-                .Add(new MoveShipSystem(_timeService));
+                .Add(new MoveShipSystem(_timeService))
+                .Add(new FrictionSystem(_timeService));
     }
 }
