@@ -1,18 +1,15 @@
 ﻿using System;
 using Asteroids.Domain.Components.Common;
+using UnityEngine;
 
 namespace Asteroids.Domain.Components.Extensions
 {
     public static class RotationExtensions
     {
-        public static (float x, float y) GetDirection(this Rotation rotation)
+        public static Vector2 GetDirection(this Rotation rotation)
         {
-            float angle = rotation.Angle;
-            double angleRad = angle * Math.PI / 180;
-            float x = (float) Math.Cos(angleRad);
-            float y = (float) Math.Sin(angleRad);
-
-            return (x, y);
+            double angleRad = Mathf.Deg2Rad * rotation.Angle;
+            return new Vector2((float) Math.Cos(angleRad), (float) Math.Sin(angleRad));
         }
     }
 }

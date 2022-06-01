@@ -23,10 +23,9 @@ namespace Asteroids.Presentation.Systems
                 Rotation rotation = entity.Get<Rotation>();
                 RayCollider collider = entity.Get<RayCollider>();
 
-                var direction = rotation.GetDirection();
-
-                var start = new Vector3(position.X, position.Y, 0f);
-                var end = start + new Vector3(direction.x, direction.y, 0f) * collider.Lenght;
+                Vector2 direction = rotation.GetDirection();
+                Vector2 start = position.Value;
+                Vector2 end = start + direction * collider.Lenght;
 
                 Debug.DrawLine(start, end, Color.green);
             });

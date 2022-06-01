@@ -39,8 +39,7 @@ namespace Asteroids.Domain.Systems
                 entity.Add<EnemiesLayer>();
 
             Position position = entity.Get<Position>();
-            position.X = spawnPosition.X;
-            position.Y = spawnPosition.Y;
+            position.Value = spawnPosition.Point;
 
             entity.Get<Rotation>().Angle = spawnPosition.DirectionAngle;
             entity.Get<RayCollider>().Lenght = 30f;

@@ -20,11 +20,11 @@ namespace Asteroids.Presentation.Systems
         {
             _filter.ForEach(entity =>
             {
-                var position = entity.Get<Position>();
-                var angle = entity.Get<Rotation>().Angle;
+                Vector2 position = entity.Get<Position>().Value;
+                float angle = entity.Get<Rotation>().Angle;
                 var view = entity.Get<View>().GameObject.transform;
 
-                view.position = new Vector3(position.X, position.Y, 0f);
+                view.position = position;
                 view.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             });
         }

@@ -2,7 +2,7 @@
 
 namespace Asteroids.Domain.Components.Common
 {
-    public class SphereCollider : IComponent
+    public class CircleCollider : IComponent
     {
         public float Radius;
     }

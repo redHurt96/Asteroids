@@ -1,10 +1,10 @@
 ﻿using EcsCore;
+using UnityEngine;
 
 namespace Asteroids.Domain.Components.Asteroids
 {
     public class CreateAsteroidIntent : IComponent
     {
-        public float X;
-        public float Y;
+        public Vector2 Point;
     }
 }

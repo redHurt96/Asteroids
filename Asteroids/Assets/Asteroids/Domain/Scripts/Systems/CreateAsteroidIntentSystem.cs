@@ -47,13 +47,13 @@ namespace Asteroids.Domain.Systems
 
             if (_randomService.IsTrue)
             {
-                intent.X = _randomService.Range(-_mapBorderService.Width, _mapBorderService.Width);
-                intent.Y = _randomService.RandomSign(_mapBorderService.Height);
+                intent.Point.x = _randomService.Range(-_mapBorderService.Width, _mapBorderService.Width);
+                intent.Point.y = _randomService.RandomSign(_mapBorderService.Height);
             }
             else
             {
-                intent.X = _randomService.RandomSign(_mapBorderService.Width);
-                intent.Y = _randomService.Range(-_mapBorderService.Height, _mapBorderService.Height);
+                intent.Point.x = _randomService.RandomSign(_mapBorderService.Width);
+                intent.Point.y = _randomService.Range(-_mapBorderService.Height, _mapBorderService.Height);
             }
         }
     }

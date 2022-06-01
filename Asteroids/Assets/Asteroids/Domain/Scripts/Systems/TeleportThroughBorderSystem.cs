@@ -3,6 +3,7 @@ using Asteroids.Domain.Components;
 using Asteroids.Domain.Components.Common;
 using Asteroids.Domain.Services;
 using EcsCore;
+using UnityEngine;
 
 namespace Asteroids.Domain.Systems
 {
@@ -22,13 +23,13 @@ namespace Asteroids.Domain.Systems
         public void Update() =>
             _filter.ForEach(entity =>
             {
-                var position = entity.Get<Position>();
+                Position position = entity.Get<Position>();
 
-                if (Math.Abs(position.X) > _mapBorderService.Width + 1f)
-                    position.X = -position.X;
+                if (Math.Abs(position.Value.x) > _mapBorderService.Width + 1f)
+                    position.Value.x = -Mathf.Sign(position.Value.x) * _mapBorderService.Width;
 
-                if (Math.Abs(position.Y) > _mapBorderService.Height + 1f)
-                    position.Y = -position.Y;
+                if (Math.Abs(position.Value.y) > _mapBorderService.Height + 1f)
+                    position.Value.y = -Mathf.Sign(position.Value.y) * _mapBorderService.Height;
             });
     }
 }

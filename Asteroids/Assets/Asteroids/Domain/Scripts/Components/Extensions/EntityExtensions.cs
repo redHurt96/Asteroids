@@ -1,6 +1,7 @@
 ﻿using Asteroids.Domain.Components.Common;
 using Asteroids.Domain.Components.SpaceShip;
 using EcsCore;
+using UnityEngine;
 
 namespace Asteroids.Domain.Components.Extensions
 {
@@ -10,14 +11,13 @@ namespace Asteroids.Domain.Components.Extensions
         {
             Position position = entity.Get<Position>();
             Rotation rotation = entity.Get<Rotation>();
-            (float x, float y) direction = rotation.GetDirection();
+            Vector2 direction = rotation.GetDirection();
             newEntity = world.NewEntity();
 
             newEntity.Add<SpawnPosition>();
 
             SpawnPosition spawnPosition = newEntity.Get<SpawnPosition>();
-            spawnPosition.X = position.X + direction.x * 2f;
-            spawnPosition.Y = position.Y + direction.y * 2f;
+            spawnPosition.Point = position.Value + direction * 2f;
             spawnPosition.DirectionAngle = rotation.Angle;
             spawnPosition.FromPlayer = true;
         }

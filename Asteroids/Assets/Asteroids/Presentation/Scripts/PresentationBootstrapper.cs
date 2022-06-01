@@ -25,7 +25,9 @@ namespace Asteroids.Presentation
                 .Add(new DestroyViewSystem())
 
                 .Add(new AssignImaginaryRotationSystem(_randomService))
-                .Add(new ImaginaryRotateSystem(_timeService));
+                .Add(new ImaginaryRotateSystem(_timeService))
+
+                .Add(new CreateLaserViewSystem());
 
 #if UNITY_EDITOR
             _systems

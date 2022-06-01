@@ -24,7 +24,7 @@ namespace Asteroids.Domain.Systems
                 .Add<AccelerationSpeed>()
                 .Add<Friction>()
                 .Add<CanRotateByPlayer>()
-                .Add<SphereCollider>()
+                .Add<CircleCollider>()
                 .Add<CanAccelerateByPlayer>()
                 .Add<CanShootByPlayer>()
                 .Add<CanLaserShootByPlayer>()
@@ -38,7 +38,7 @@ namespace Asteroids.Domain.Systems
             ship.Get<RotationSpeed>().Amount = 180f;
             ship.Get<AccelerationSpeed>().Amount = 15f;
             ship.Get<Friction>().Amount = 15f;
-            ship.Get<SphereCollider>().Radius = 2f;
+            ship.Get<CircleCollider>().Radius = 2f;
         }
     }
 }

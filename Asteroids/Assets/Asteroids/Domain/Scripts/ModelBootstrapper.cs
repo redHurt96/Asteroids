@@ -30,6 +30,7 @@ namespace Asteroids.Domain
             _systems
                 .Add(new CollisionSystem())
                 .Add(new DestroyByCollisionSystem())
+                .Add(new RayCollisionSystem())
 
                 .Add(new CreateShipSystem())
                 .Add(new AccelerationSystem(_inputService, _timeService))

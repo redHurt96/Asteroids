@@ -4,6 +4,7 @@ using Asteroids.Domain.Components.Common;
 using Asteroids.Domain.Components.Extensions;
 using Asteroids.Domain.Services;
 using EcsCore;
+using UnityEngine;
 
 namespace Asteroids.Domain.Systems
 {
@@ -29,10 +30,9 @@ namespace Asteroids.Domain.Systems
                 Position position = entity.Get<Position>();
                 float velocity = entity.Get<Velocity>().Amount;
                 Rotation rotation = entity.Get<Rotation>();
-                (float x, float y) direction = rotation.GetDirection();
+                Vector2 direction = rotation.GetDirection();
 
-                position.X += direction.x * velocity * deltaTime;
-                position.Y += direction.y * velocity * deltaTime;
+                position.Value += direction * velocity * deltaTime;
             });
         }
     }

@@ -2,6 +2,7 @@
 using Asteroids.Domain.Components.Extensions;
 using Asteroids.Domain.Components.SpaceShip;
 using EcsCore;
+using UnityEngine;
 
 namespace Asteroids.Domain.Systems
 {
@@ -19,7 +20,7 @@ namespace Asteroids.Domain.Systems
 
             _enemiesLayerColliders = new Filter(world)
                 .Include<EnemiesLayer>()
-                .Include<SphereCollider>()
+                .Include<CircleCollider>()
                 .Include<Position>();
         }
 
@@ -27,14 +28,23 @@ namespace Asteroids.Domain.Systems
         {
             _playerRayColliders.ForEach(entity =>
             {
-                Position position = entity.Get<Position>();
-                (float x, float y) direction = entity.Get<Rotation>().GetDirection();
+                Vector2 position = entity.Get<Position>().Value;
+                Vector2 direction = entity.Get<Rotation>().GetDirection();
                 float lenght = entity.Get<RayCollider>().Lenght;
-                
+                Vector2 end = position + direction * lenght; 
+
                 _enemiesLayerColliders.ForEach(other =>
                 {
-                    Position otherPosition = entity.Get<Position>();
-                    float otherRadius = entity.Get<SphereCollider>().Radius;
+                    Vector2 otherPosition = other.Get<Position>().Value;
+                    float otherRadius = other.Get<CircleCollider>().Radius;
+
+                    float sumOfDistances = Vector2.Distance(otherPosition, position)
+                                           + Vector2.Distance(otherPosition, end);
+
+                    float minDistance = Mathf.Sqrt(otherRadius * otherRadius + lenght * lenght / 4) * 2;
+
+                    if (sumOfDistances <= minDistance)
+                        other.Add<ColliderEnter>();
                 });
             });
         }

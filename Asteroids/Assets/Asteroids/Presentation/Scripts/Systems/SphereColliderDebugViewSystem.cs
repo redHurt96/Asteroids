@@ -1,7 +1,6 @@
 ﻿using Asteroids.Domain.Components.Common;
 using EcsCore;
 using UnityEngine;
-using SphereCollider = Asteroids.Domain.Components.Common.SphereCollider;
 
 namespace Asteroids.Presentation.Systems
 {
@@ -12,24 +11,23 @@ namespace Asteroids.Presentation.Systems
         public void Init(EcsWorld world) =>
             _filter = new Filter(world)
                 .Include<Position>()
-                .Include<SphereCollider>();
+                .Include<CircleCollider>();
 
         public void Update() =>
             _filter.ForEach(entity =>
             {
-                Position position = entity.Get<Position>();
-                float radius = entity.Get<SphereCollider>().Radius;
+                Vector2 position = entity.Get<Position>().Value;
+                float radius = entity.Get<CircleCollider>().Radius;
 
-                var start = new Vector3(position.X, position.Y, 0f);
-                var right = start + Vector3.right * radius;
-                var left = start + Vector3.left * radius;
-                var up = start + Vector3.up * radius;
-                var down = start + Vector3.down * radius;
+                var right = position + Vector2.right * radius;
+                var left = position + Vector2.left * radius;
+                var up = position + Vector2.up * radius;
+                var down = position + Vector2.down * radius;
 
-                Debug.DrawLine(start, right, Color.green);
-                Debug.DrawLine(start, left, Color.green);
-                Debug.DrawLine(start, up, Color.green);
-                Debug.DrawLine(start, down, Color.green);
+                Debug.DrawLine(position, right, Color.green);
+                Debug.DrawLine(position, left, Color.green);
+                Debug.DrawLine(position, up, Color.green);
+                Debug.DrawLine(position, down, Color.green);
             });
     }
 }

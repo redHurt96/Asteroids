@@ -32,7 +32,7 @@ namespace Asteroids.Domain.Systems
                 .Add<ObjectTag>()
                 .Add<Velocity>()
                 .Add<DestroyTimer>()
-                .Add<SphereCollider>();
+                .Add<CircleCollider>();
 
             var spawnPosition = entity.Get<SpawnPosition>();
             
@@ -42,12 +42,11 @@ namespace Asteroids.Domain.Systems
                 entity.Add<EnemiesLayer>();
 
             Position position = entity.Get<Position>();
-            position.X = spawnPosition.X;
-            position.Y = spawnPosition.Y;
+            position.Value = spawnPosition.Point;
 
             entity.Get<Rotation>().Angle = spawnPosition.DirectionAngle;
             entity.Get<Velocity>().Amount = 30f;
-            entity.Get<SphereCollider>().Radius = .5f;
+            entity.Get<CircleCollider>().Radius = .5f;
             entity.Get<DestroyTimer>().Left = 5f;
             entity.Get<ObjectTag>().Tag = Tag.Bullet;
         }
