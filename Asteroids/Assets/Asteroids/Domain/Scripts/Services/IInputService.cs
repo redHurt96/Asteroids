@@ -4,5 +4,7 @@ namespace Asteroids.Domain.Services
     {
         bool IsShipAccelerated { get; }
         float RotateDirection { get; }
+        bool CanShoot { get; }
+        bool CanShootLaser { get; }
     }
 }

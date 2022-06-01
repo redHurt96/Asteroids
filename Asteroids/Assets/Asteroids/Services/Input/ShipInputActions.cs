@@ -44,6 +44,24 @@ public partial class @ShipInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""7c01b008-1b34-4cd0-a128-1b9bd22fe7d3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Laser"",
+                    ""type"": ""Button"",
+                    ""id"": ""4afe208f-f7e0-4e0b-b020-f3ed84ce069e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -90,6 +108,28 @@ public partial class @ShipInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Rotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66e33bc9-0658-464c-9a67-f35fd71d8697"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb7d982d-b176-4e34-a898-8e0342a058eb"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Laser"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -100,6 +140,8 @@ public partial class @ShipInputActions : IInputActionCollection2, IDisposable
         m_SpaceShip = asset.FindActionMap("SpaceShip", throwIfNotFound: true);
         m_SpaceShip_Acceleration = m_SpaceShip.FindAction("Acceleration", throwIfNotFound: true);
         m_SpaceShip_Rotation = m_SpaceShip.FindAction("Rotation", throwIfNotFound: true);
+        m_SpaceShip_Shoot = m_SpaceShip.FindAction("Shoot", throwIfNotFound: true);
+        m_SpaceShip_Laser = m_SpaceShip.FindAction("Laser", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -161,12 +203,16 @@ public partial class @ShipInputActions : IInputActionCollection2, IDisposable
     private ISpaceShipActions m_SpaceShipActionsCallbackInterface;
     private readonly InputAction m_SpaceShip_Acceleration;
     private readonly InputAction m_SpaceShip_Rotation;
+    private readonly InputAction m_SpaceShip_Shoot;
+    private readonly InputAction m_SpaceShip_Laser;
     public struct SpaceShipActions
     {
         private @ShipInputActions m_Wrapper;
         public SpaceShipActions(@ShipInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Acceleration => m_Wrapper.m_SpaceShip_Acceleration;
         public InputAction @Rotation => m_Wrapper.m_SpaceShip_Rotation;
+        public InputAction @Shoot => m_Wrapper.m_SpaceShip_Shoot;
+        public InputAction @Laser => m_Wrapper.m_SpaceShip_Laser;
         public InputActionMap Get() { return m_Wrapper.m_SpaceShip; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -182,6 +228,12 @@ public partial class @ShipInputActions : IInputActionCollection2, IDisposable
                 @Rotation.started -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnRotation;
                 @Rotation.performed -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnRotation;
                 @Rotation.canceled -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnRotation;
+                @Shoot.started -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnShoot;
+                @Laser.started -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnLaser;
+                @Laser.performed -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnLaser;
+                @Laser.canceled -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnLaser;
             }
             m_Wrapper.m_SpaceShipActionsCallbackInterface = instance;
             if (instance != null)
@@ -192,6 +244,12 @@ public partial class @ShipInputActions : IInputActionCollection2, IDisposable
                 @Rotation.started += instance.OnRotation;
                 @Rotation.performed += instance.OnRotation;
                 @Rotation.canceled += instance.OnRotation;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
+                @Laser.started += instance.OnLaser;
+                @Laser.performed += instance.OnLaser;
+                @Laser.canceled += instance.OnLaser;
             }
         }
     }
@@ -200,5 +258,7 @@ public partial class @ShipInputActions : IInputActionCollection2, IDisposable
     {
         void OnAcceleration(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
+        void OnLaser(InputAction.CallbackContext context);
     }
 }
