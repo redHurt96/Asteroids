@@ -4,6 +4,7 @@
     {
         SpaceShip,
         Ufo,
-        Asteroid
+        Asteroid,
+        Bullet
     }
 }

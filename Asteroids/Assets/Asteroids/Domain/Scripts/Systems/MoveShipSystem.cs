@@ -1,6 +1,7 @@
 ﻿using System;
 using Asteroids.Domain.Components;
 using Asteroids.Domain.Components.Common;
+using Asteroids.Domain.Components.Extensions;
 using Asteroids.Domain.Services;
 using EcsCore;
 
@@ -27,13 +28,11 @@ namespace Asteroids.Domain.Systems
             {
                 Position position = entity.Get<Position>();
                 float velocity = entity.Get<Velocity>().Amount;
-                float angle = entity.Get<Rotation>().Angle;
-                double angleRad = angle * Math.PI / 180;
-                float x = (float) Math.Cos(angleRad);
-                float y = (float) Math.Sin(angleRad);
+                Rotation rotation = entity.Get<Rotation>();
+                (float x, float y) direction = rotation.GetDirection();
 
-                position.X += x * velocity * deltaTime;
-                position.Y += y * velocity * deltaTime;
+                position.X += direction.x * velocity * deltaTime;
+                position.Y += direction.y * velocity * deltaTime;
             });
         }
     }

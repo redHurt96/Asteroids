@@ -27,6 +27,7 @@ namespace Asteroids.Domain.Systems
                 .Add<SphereCollider>()
                 .Add<CanAccelerateByPlayer>()
                 .Add<CanShootByPlayer>()
+                .Add<CanBeTeleported>()
                 .Add<PlayerLayer>();
 
         private static void Setup(Entity ship)
