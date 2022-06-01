@@ -41,6 +41,7 @@ namespace Asteroids.Domain.Systems
                 .Add<Rotation>()
                 .Add<Velocity>()
                 .Add<SphereCollider>()
+                .Add<CanBeTeleported>()
                 .Add<EnemiesLayer>();
 
             asteroid.Get<ObjectTag>().Tag = Tag.Asteroid;

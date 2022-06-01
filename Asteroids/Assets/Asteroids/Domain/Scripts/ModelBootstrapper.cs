@@ -37,6 +37,10 @@ namespace Asteroids.Domain
                 .Add(new MoveShipSystem(_timeService))
                 .Add(new FrictionSystem(_inputService, _timeService))
                 .Add(new TeleportThroughBorderSystem(_mapBorderService))
+                .Add(new ShootIntentSystem(_inputService))
+                .Add(new CreateShootSystem())
+                .Add(new UpdateShootCooldownSystem(_timeService))
+                .Add(new UpdateDestroyTimer(_timeService))
 
                 .Add(new CreateAsteroidIntentSystem(_timeService, _mapBorderService, _randomService))
                 .Add(new CreateAsteroidSystem(_randomService));

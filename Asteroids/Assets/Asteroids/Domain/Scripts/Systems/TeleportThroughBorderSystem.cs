@@ -16,7 +16,8 @@ namespace Asteroids.Domain.Systems
 
         public void Init(EcsWorld world) =>
             _filter = new Filter(world)
-                .Include<Position>();
+                .Include<Position>()
+                .Include<CanBeTeleported>();
 
         public void Update() =>
             _filter.ForEach(entity =>
