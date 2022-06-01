@@ -24,10 +24,10 @@ namespace Asteroids.Domain.Systems
             {
                 var position = entity.Get<Position>();
 
-                if (Math.Abs(position.X) > _mapBorderService.Width)
+                if (Math.Abs(position.X) > _mapBorderService.Width + 1f)
                     position.X = -position.X;
 
-                if (Math.Abs(position.Y) > _mapBorderService.Height)
+                if (Math.Abs(position.Y) > _mapBorderService.Height + 1f)
                     position.Y = -position.Y;
             });
     }
