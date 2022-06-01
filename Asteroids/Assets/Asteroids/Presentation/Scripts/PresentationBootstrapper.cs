@@ -28,7 +28,9 @@ namespace Asteroids.Presentation
                 .Add(new ImaginaryRotateSystem(_timeService));
 
 #if UNITY_EDITOR
-            _systems.Add(new ColliderDebugViewSystem());
+            _systems
+                .Add(new SphereColliderDebugViewSystem())
+                .Add(new RayColliderDebugViewSystem());
 #endif
         }
     }

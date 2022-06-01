@@ -3,7 +3,7 @@ using Asteroids.Domain.Components.Common;
 
 namespace Asteroids.Domain.Components.Extensions
 {
-    public static class PositionExtensions
+    public static class RotationExtensions
     {
         public static (float x, float y) GetDirection(this Rotation rotation)
         {
@@ -14,6 +14,5 @@ namespace Asteroids.Domain.Components.Extensions
 
             return (x, y);
         }
-
     }
 }

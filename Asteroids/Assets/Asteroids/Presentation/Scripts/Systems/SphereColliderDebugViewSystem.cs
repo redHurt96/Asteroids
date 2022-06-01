@@ -5,7 +5,7 @@ using SphereCollider = Asteroids.Domain.Components.Common.SphereCollider;
 
 namespace Asteroids.Presentation.Systems
 {
-    public class ColliderDebugViewSystem : IInitSystem, IUpdateSystem
+    public class SphereColliderDebugViewSystem : IInitSystem, IUpdateSystem
     {
         private Filter _filter;
 

@@ -6,31 +6,31 @@ using EcsCore;
 
 namespace Asteroids.Domain.Systems
 {
-    public class ShootIntentSystem : IInitSystem, IUpdateSystem
+    public class LaserIntentSystem : IInitSystem, IUpdateSystem
     {
-        private readonly IInputService _inputService;
+        private readonly IInputService _input;
         private EcsWorld _world;
-        private Filter _shootFilter;
+        private Filter _filter;
 
-        public ShootIntentSystem(IInputService inputService) => 
-            _inputService = inputService;
+        public LaserIntentSystem(IInputService input) => 
+            _input = input;
 
         public void Init(EcsWorld world)
         {
             _world = world;
-            _shootFilter = new Filter(world)
-                .Include<CanShootByPlayer>()
+            _filter = new Filter(world)
+                .Include<CanLaserShootByPlayer>()
                 .Include<Position>()
                 .Include<Rotation>()
-                .Exclude<ShootCooldown>();
+                .Exclude<LaserCooldown>();
         }
 
         public void Update()
         {
-            if (!_inputService.CanShoot)
+            if (!_input.CanShootLaser)
                 return;
-
-            _shootFilter.ForEach(entity =>
+            
+            _filter.ForEach(entity =>
             {
                 CreateIntent(entity);
                 AddCooldown(entity);
@@ -40,13 +40,13 @@ namespace Asteroids.Domain.Systems
         private void CreateIntent(Entity entity)
         {
             entity.CreateSpawnPosition(_world, out var intentEntity);
-            intentEntity.Add<CreateBulletIntent>();
+            intentEntity.Add<CreateLaserIntent>();
         }
 
-        private static void AddCooldown(Entity entity)
+        private void AddCooldown(Entity entity)
         {
-            entity.Add<ShootCooldown>();
-            entity.Get<ShootCooldown>().Time = .25f;
+            entity.Add<LaserCooldown>();
+            entity.Get<LaserCooldown>().Time = 1f;
         }
     }
 }

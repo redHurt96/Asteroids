@@ -1,38 +1,35 @@
-﻿using Asteroids.Domain.Common;
-using Asteroids.Domain.Components.Common;
+﻿using Asteroids.Domain.Components.Common;
 using Asteroids.Domain.Components.SpaceShip;
 using EcsCore;
 
 namespace Asteroids.Domain.Systems
 {
-    public class CreateShootSystem : IInitSystem, IUpdateSystem
+    public class CreateLaserSystem : IInitSystem, IUpdateSystem
     {
         private Filter _filter;
 
         public void Init(EcsWorld world) =>
             _filter = new Filter(world)
-                .Include<CreateBulletIntent>();
+                .Include<CreateLaserIntent>();
 
         public void Update()
         {
             _filter.ForEach(entity =>
             {
-                CreateShoot(entity);
+                CreateLaser(entity);
 
-                entity.Remove<CreateBulletIntent>();
+                entity.Remove<CreateLaserIntent>();
                 entity.Remove<SpawnPosition>();
             });
         }
 
-        private void CreateShoot(Entity entity)
+        private void CreateLaser(Entity entity)
         {
             entity
                 .Add<Position>()
                 .Add<Rotation>()
-                .Add<ObjectTag>()
-                .Add<Velocity>()
                 .Add<DestroyTimer>()
-                .Add<SphereCollider>();
+                .Add<RayCollider>();
 
             var spawnPosition = entity.Get<SpawnPosition>();
             
@@ -46,10 +43,8 @@ namespace Asteroids.Domain.Systems
             position.Y = spawnPosition.Y;
 
             entity.Get<Rotation>().Angle = spawnPosition.DirectionAngle;
-            entity.Get<Velocity>().Amount = 30f;
-            entity.Get<SphereCollider>().Radius = .5f;
+            entity.Get<RayCollider>().Lenght = 30f;
             entity.Get<DestroyTimer>().Left = 5f;
-            entity.Get<ObjectTag>().Tag = Tag.Bullet;
         }
     }
 }

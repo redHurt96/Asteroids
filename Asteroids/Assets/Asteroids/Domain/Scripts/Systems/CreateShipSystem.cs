@@ -27,6 +27,7 @@ namespace Asteroids.Domain.Systems
                 .Add<SphereCollider>()
                 .Add<CanAccelerateByPlayer>()
                 .Add<CanShootByPlayer>()
+                .Add<CanLaserShootByPlayer>()
                 .Add<CanBeTeleported>()
                 .Add<PlayerLayer>();
 
