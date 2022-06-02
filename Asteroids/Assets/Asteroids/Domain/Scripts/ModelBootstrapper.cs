@@ -43,8 +43,10 @@ namespace Asteroids.Domain
                 .Add(new UpdateShootCooldownSystem(_timeService))
                 .Add(new UpdateDestroyTimer(_timeService))
                 .Add(new LaserIntentSystem(_inputService))
+                .Add(new UpdateLaserShootsCountSystem())
                 .Add(new CreateLaserSystem())
                 .Add(new UpdateLaserCooldownSystem(_timeService))
+                .Add(new UpdateLaserRestoreShootSystem(_timeService))
 
                 .Add(new CreateAsteroidIntentSystem(_timeService, _mapBorderService, _randomService))
                 .Add(new CreateAsteroidSystem(_randomService));

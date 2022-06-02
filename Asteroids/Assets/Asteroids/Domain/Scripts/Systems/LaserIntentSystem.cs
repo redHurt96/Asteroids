@@ -20,6 +20,7 @@ namespace Asteroids.Domain.Systems
             _world = world;
             _filter = new Filter(world)
                 .Include<CanLaserShootByPlayer>()
+                .Include<LaserShootsCount>()
                 .Include<Position>()
                 .Include<Rotation>()
                 .Exclude<LaserCooldown>();
@@ -32,6 +33,11 @@ namespace Asteroids.Domain.Systems
             
             _filter.ForEach(entity =>
             {
+                var shootsCount = entity.Get<LaserShootsCount>().Left;
+
+                if (shootsCount <= 0)
+                    return;
+
                 CreateIntent(entity);
                 AddCooldown(entity);
             });

@@ -16,6 +16,7 @@ namespace Asteroids.Domain.Systems
         private static Entity CreateShip(EcsWorld world) =>
             world.NewEntity()
                 .Add<ObjectTag>()
+                .Add<Ship>()
                 .Add<Position>()
                 .Add<Rotation>()
                 .Add<RotationSpeed>()
@@ -29,7 +30,8 @@ namespace Asteroids.Domain.Systems
                 .Add<CanShootByPlayer>()
                 .Add<CanLaserShootByPlayer>()
                 .Add<CanBeTeleported>()
-                .Add<PlayerLayer>();
+                .Add<PlayerLayer>()
+                .Add<LaserShootsCount>();
 
         private static void Setup(Entity ship)
         {
@@ -39,6 +41,9 @@ namespace Asteroids.Domain.Systems
             ship.Get<AccelerationSpeed>().Amount = 15f;
             ship.Get<Friction>().Amount = 15f;
             ship.Get<CircleCollider>().Radius = 2f;
+            LaserShootsCount shootsCount = ship.Get<LaserShootsCount>();
+            shootsCount.Max = 5;
+            shootsCount.Left = 5;
         }
     }
 }
