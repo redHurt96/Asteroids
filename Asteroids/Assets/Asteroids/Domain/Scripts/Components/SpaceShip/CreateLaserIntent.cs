@@ -2,5 +2,5 @@
 
 namespace Asteroids.Domain.Components.SpaceShip
 {
-    public class CreateLaserIntent : IComponent { }
+    public class CreateLaserIntent : IComponent {}
 }

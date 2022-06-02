@@ -22,7 +22,8 @@ namespace Asteroids.Bootstrap.Bootstrappers
                 .Add(new CreateLaserShootsCountPanelSystem(canvas))
                 .Add(new UpdateLaserShootsCountPanelSystem())
                 .Add(new CreateLaserShootRestorePanelSystem(canvas))
-                .Add(new UpdateRestoreLaserShootPanelSystem());
+                .Add(new UpdateRestoreLaserShootPanelSystem())
+                .Add(new CreateRestartMenu());
         }
     }
 }

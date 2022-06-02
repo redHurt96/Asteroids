@@ -47,6 +47,8 @@ namespace Asteroids.Domain.Systems
         {
             entity.CreateSpawnPosition(_world, true, out var intentEntity);
             intentEntity.Add<CreateLaserIntent>();
+            intentEntity.Add<Parent>();
+            intentEntity.Get<Parent>().Entity = entity;
         }
 
         private void AddCooldown(Entity entity)

@@ -22,7 +22,8 @@ namespace Asteroids.Bootstrap.Bootstrappers
                 .Add(new AssignImaginaryRotationSystem(random))
                 .Add(new ImaginaryRotateSystem(time))
 
-                .Add(new CreateLaserViewSystem(sceneObjects));
+                .Add(new CreateLaserViewSystem(sceneObjects))
+                .Add(new UpdateLaserViewSystem());
 
 #if UNITY_EDITOR
             systems

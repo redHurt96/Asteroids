@@ -25,15 +25,19 @@ namespace Asteroids.Bootstrap.Bootstrappers
                 .Add(new MoveShipSystem(time))
                 .Add(new FrictionSystem(input, time))
                 .Add(new TeleportThroughBorderSystem(mapBorders))
+                
                 .Add(new ShootIntentSystem(input))
                 .Add(new CreateShootSystem())
                 .Add(new UpdateShootCooldownSystem(time))
                 .Add(new UpdateDestroyTimer(time))
+                
                 .Add(new LaserIntentSystem(input))
                 .Add(new UpdateLaserShootsCountSystem())
                 .Add(new CreateLaserSystem())
                 .Add(new UpdateLaserCooldownSystem(time))
                 .Add(new UpdateLaserRestoreShootSystem(time))
+                .Add(new UpdatePositionByParentSystem())
+                .Add(new UpdateRotationByParentSystem())
 
                 .Add(new CreateAsteroidIntentSystem(time, mapBorders, randomService))
                 .Add(new CreateAsteroidSystem(randomService))
