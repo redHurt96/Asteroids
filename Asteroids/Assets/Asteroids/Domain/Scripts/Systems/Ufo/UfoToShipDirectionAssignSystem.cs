@@ -31,7 +31,7 @@ namespace Asteroids.Domain.Systems.Ufo
                 _ship.ForEach(ship =>
                 {
                     Vector2 shipPosition = ship.Get<Position>().Value;
-                    rotation.Angle = Vector2.Angle(Vector2.right, (shipPosition - position).normalized);
+                    rotation.Angle = Vector2.SignedAngle(Vector2.right, (shipPosition - position).normalized);
                 });
             });
         }

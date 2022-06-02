@@ -41,7 +41,8 @@ namespace Asteroids.Bootstrap.Bootstrappers
 
                 .Add(new CreateUfoIntentSystem(time, mapBorders, randomService))
                 .Add(new CreateUfoSystem())
-                .Add(new UfoToShipDirectionAssignSystem());
+                .Add(new UfoToShipDirectionAssignSystem())
+                .Add(new UfoShootSystem());
         }
     }
 }

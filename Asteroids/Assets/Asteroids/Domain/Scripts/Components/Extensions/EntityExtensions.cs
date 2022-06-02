@@ -7,7 +7,7 @@ namespace Asteroids.Domain.Components.Extensions
 {
     public static class EntityExtensions
     {
-        public static void CreateSpawnPosition(this Entity entity, EcsWorld world, out Entity newEntity)
+        public static void CreateSpawnPosition(this Entity entity, EcsWorld world, bool fromPlayer, out Entity newEntity)
         {
             Position position = entity.Get<Position>();
             Rotation rotation = entity.Get<Rotation>();
@@ -17,9 +17,9 @@ namespace Asteroids.Domain.Components.Extensions
             newEntity.Add<SpawnPosition>();
 
             SpawnPosition spawnPosition = newEntity.Get<SpawnPosition>();
-            spawnPosition.Point = position.Value + direction * 2f;
+            spawnPosition.Point = position.Value + direction * Settings.DISTANCE_TO_SHOT;
             spawnPosition.DirectionAngle = rotation.Angle;
-            spawnPosition.FromPlayer = true;
+            spawnPosition.FromPlayer = fromPlayer;
         }
     }
 }
