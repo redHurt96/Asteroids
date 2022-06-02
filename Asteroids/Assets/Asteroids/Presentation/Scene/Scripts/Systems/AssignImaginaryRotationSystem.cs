@@ -27,10 +27,8 @@ namespace Asteroids.Presentation.Scene.Systems
             {
                 var tag = entity.Get<ViewTag>().Tag;
 
-                if (tag != Tag.Asteroid)
-                    return;
-
-                AssignComponent(entity);
+                if (PresentationSettings.CanImaginaryRotate.Contains(tag))
+                    AssignComponent(entity);
             });
         }
 

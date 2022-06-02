@@ -12,9 +12,10 @@ namespace Asteroids.Bootstrap.Bootstrappers
             ITimeService time = services.Get<ITimeService>();
             IRandomService random = services.Get<IRandomService>();
             ISceneObjectsService sceneObjects = services.Get<ISceneObjectsService>();
+            IResourcesService resources = services.Get<IResourcesService>();
 
             systems
-                .Add(new CreateViewSystem())
+                .Add(new CreateViewSystem(resources))
                 .Add(new UpdateViewPositionSystem())
                 .Add(new UpdateViewRotationSystem())
                 .Add(new DestroyViewSystem())
@@ -22,7 +23,7 @@ namespace Asteroids.Bootstrap.Bootstrappers
                 .Add(new AssignImaginaryRotationSystem(random))
                 .Add(new ImaginaryRotateSystem(time))
 
-                .Add(new CreateLaserViewSystem(sceneObjects))
+                .Add(new CreateLaserViewSystem(sceneObjects, resources))
                 .Add(new UpdateLaserViewSystem());
 
 #if UNITY_EDITOR

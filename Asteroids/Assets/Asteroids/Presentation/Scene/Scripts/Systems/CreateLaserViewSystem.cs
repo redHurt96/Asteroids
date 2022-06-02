@@ -14,13 +14,17 @@ namespace Asteroids.Presentation.Scene.Systems
         private LineRenderer _viewResource;
 
         private readonly ISceneObjectsService _sceneObjects;
+        private readonly IResourcesService _resources;
 
-        public CreateLaserViewSystem(ISceneObjectsService sceneObjects) => 
+        public CreateLaserViewSystem(ISceneObjectsService sceneObjects, IResourcesService resources)
+        {
             _sceneObjects = sceneObjects;
+            _resources = resources;
+        }
 
         public void Init(EcsWorld world)
         {
-            _viewResource = Resources.Load<LineRenderer>("LaserView");
+            _viewResource = _resources.Load<LineRenderer>("LaserView");
             _filter = new Filter(world)
                 .Include<RayCollider>()
                 .Include<Position>()

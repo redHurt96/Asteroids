@@ -13,5 +13,11 @@ namespace Asteroids.Presentation.Scene
             [Tag.Bullet] = true,
             [Tag.Ufo] = false,
         };
+
+        public static readonly List<Tag> CanImaginaryRotate = new()
+        {
+            Tag.Asteroid,
+            Tag.SmallAsteroid,
+        };
     }
 }

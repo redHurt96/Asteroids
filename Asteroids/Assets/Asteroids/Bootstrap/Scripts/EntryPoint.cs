@@ -44,7 +44,8 @@ namespace Asteroids.Bootstrap
                 .RegisterSingle<IInputService>(new InputService())
                 .RegisterSingle<ITimeService>(new TimeService())
                 .RegisterSingle<IMapBorderService>(new MapBorderService(_sceneObjects))
-                .RegisterSingle<IRandomService>(new RandomService());
+                .RegisterSingle<IRandomService>(new RandomService())
+                .RegisterSingle<IResourcesService>(new ResourcesService());
 
         private void SetupBootstrappers()
         {

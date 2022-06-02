@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Asteroids.Domain
+﻿namespace Asteroids.Domain
 {
     public static class Settings
     {
