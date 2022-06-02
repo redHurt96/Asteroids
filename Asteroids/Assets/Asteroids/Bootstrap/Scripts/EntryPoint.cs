@@ -1,6 +1,7 @@
 using Asteroids.Domain;
 using Asteroids.Domain.Services;
 using Asteroids.Presentation;
+using Asteroids.Presentation.UI.Scripts;
 using Asteroids.Services;
 using Asteroids.Services.Input;
 using EcsCore;
@@ -12,9 +13,6 @@ namespace Asteroids.Bootstrap
     {
         private EcsWorld _world;
         private SystemsArray _systems;
-
-        private ModelBootstrapper _modelBootstrapper;
-        private PresentationBootstrapper _presentationBootstrapper;
 
         private IInputService _inputService;
         private ITimeService _timeService;
@@ -31,6 +29,7 @@ namespace Asteroids.Bootstrap
             SetupServices();
             SetupModel();
             SetupPresentations();
+            SetupUi();
 
             _systems.Init(_world);
         }
@@ -49,16 +48,16 @@ namespace Asteroids.Bootstrap
             _randomService = new RandomService();
         }
 
-        private void SetupModel()
-        {
-            _modelBootstrapper = new ModelBootstrapper(_systems, _inputService, _timeService, _mapBorderService, _randomService);
-            _modelBootstrapper.Setup();
-        }
+        private void SetupModel() =>
+            new ModelBootstrapper(_systems, _inputService, _timeService, _mapBorderService, _randomService)
+                .Setup();
 
-        private void SetupPresentations()
-        {
-            _presentationBootstrapper = new PresentationBootstrapper(_systems, _randomService, _timeService);
-            _presentationBootstrapper.Setup();
-        }
+        private void SetupPresentations() =>
+            new PresentationBootstrapper(_systems, _randomService, _timeService)
+                .Setup();
+
+        private void SetupUi() =>
+            new UiBootstrapper(_systems)
+                .Setup();
     }
 }

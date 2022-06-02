@@ -40,17 +40,16 @@ namespace Asteroids.Domain.Systems
                 .Add<Position>()
                 .Add<Rotation>()
                 .Add<Velocity>()
-                .Add<SphereCollider>()
+                .Add<CircleCollider>()
                 .Add<CanBeTeleported>()
                 .Add<EnemiesLayer>();
 
             asteroid.Get<ObjectTag>().Tag = Tag.Asteroid;
             var position = asteroid.Get<Position>();
-            position.X = intent.X;
-            position.Y = intent.Y;
+            position.Value = intent.Point;
             asteroid.Get<Rotation>().Angle = _random.RangeWithRandomSign(5f, 175f);
             asteroid.Get<Velocity>().Amount = 7f;
-            asteroid.Get<SphereCollider>().Radius = 2f;
+            asteroid.Get<CircleCollider>().Radius = 2f;
         }
     }
 }

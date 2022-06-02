@@ -10,7 +10,7 @@ namespace Asteroids.Domain.Systems
     {
         private readonly IInputService _inputService;
         private EcsWorld _world;
-        private Filter _filter;
+        private Filter _shootFilter;
 
         public ShootIntentSystem(IInputService inputService) => 
             _inputService = inputService;
@@ -18,7 +18,7 @@ namespace Asteroids.Domain.Systems
         public void Init(EcsWorld world)
         {
             _world = world;
-            _filter = new Filter(world)
+            _shootFilter = new Filter(world)
                 .Include<CanShootByPlayer>()
                 .Include<Position>()
                 .Include<Rotation>()
@@ -30,7 +30,7 @@ namespace Asteroids.Domain.Systems
             if (!_inputService.CanShoot)
                 return;
 
-            _filter.ForEach(entity =>
+            _shootFilter.ForEach(entity =>
             {
                 CreateIntent(entity);
                 AddCooldown(entity);
@@ -39,16 +39,8 @@ namespace Asteroids.Domain.Systems
 
         private void CreateIntent(Entity entity)
         {
-            Position position = entity.Get<Position>();
-            Rotation rotation = entity.Get<Rotation>();
-            var direction = rotation.GetDirection();
-            var intentEntity = _world.NewEntity();
+            entity.CreateSpawnPosition(_world, out var intentEntity);
             intentEntity.Add<CreateBulletIntent>();
-            CreateBulletIntent intent = intentEntity.Get<CreateBulletIntent>();
-            intent.X = position.X + direction.x * 2f;
-            intent.Y = position.Y + direction.y * 2f;
-            intent.DirectionAngle = rotation.Angle;
-            intent.FromPlayer = true;
         }
 
         private static void AddCooldown(Entity entity)

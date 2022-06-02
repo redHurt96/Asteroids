@@ -17,15 +17,14 @@ namespace Asteroids.Domain.Systems
         {
             _filter.ForEach(entity =>
             {
-                CreateBulletIntent intent = entity.Get<CreateBulletIntent>();
-
-                CreateShoot(entity, intent);
+                CreateShoot(entity);
 
                 entity.Remove<CreateBulletIntent>();
+                entity.Remove<SpawnPosition>();
             });
         }
 
-        private void CreateShoot(Entity entity, CreateBulletIntent intent)
+        private void CreateShoot(Entity entity)
         {
             entity
                 .Add<Position>()
@@ -33,20 +32,21 @@ namespace Asteroids.Domain.Systems
                 .Add<ObjectTag>()
                 .Add<Velocity>()
                 .Add<DestroyTimer>()
-                .Add<SphereCollider>();
+                .Add<CircleCollider>();
 
-            if (intent.FromPlayer)
+            var spawnPosition = entity.Get<SpawnPosition>();
+            
+            if (spawnPosition.FromPlayer)
                 entity.Add<PlayerLayer>();
             else
                 entity.Add<EnemiesLayer>();
 
             Position position = entity.Get<Position>();
-            position.X = intent.X;
-            position.Y = intent.Y;
+            position.Value = spawnPosition.Point;
 
-            entity.Get<Rotation>().Angle = intent.DirectionAngle;
+            entity.Get<Rotation>().Angle = spawnPosition.DirectionAngle;
             entity.Get<Velocity>().Amount = 30f;
-            entity.Get<SphereCollider>().Radius = .5f;
+            entity.Get<CircleCollider>().Radius = .5f;
             entity.Get<DestroyTimer>().Left = 5f;
             entity.Get<ObjectTag>().Tag = Tag.Bullet;
         }

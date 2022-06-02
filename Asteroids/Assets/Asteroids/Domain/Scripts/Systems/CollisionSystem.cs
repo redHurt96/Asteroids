@@ -1,6 +1,7 @@
 ﻿using System;
 using Asteroids.Domain.Components.Common;
 using EcsCore;
+using UnityEngine;
 
 namespace Asteroids.Domain.Systems
 {
@@ -13,12 +14,12 @@ namespace Asteroids.Domain.Systems
         {
             _playerLayerColliders = new Filter(world)
                 .Include<PlayerLayer>()
-                .Include<SphereCollider>()
+                .Include<CircleCollider>()
                 .Include<Position>();
 
             _enemiesLayerColliders = new Filter(world)
                 .Include<EnemiesLayer>()
-                .Include<SphereCollider>()
+                .Include<CircleCollider>()
                 .Include<Position>();
         }
 
@@ -26,15 +27,14 @@ namespace Asteroids.Domain.Systems
             _playerLayerColliders.ForEach(playerLayerEntity =>
             {
                 Position position = playerLayerEntity.Get<Position>();
-                float radius = playerLayerEntity.Get<SphereCollider>().Radius;
+                float radius = playerLayerEntity.Get<CircleCollider>().Radius;
 
                 _enemiesLayerColliders.ForEach(enemiesLayerEntity =>
                 {
                     Position enemyPosition = enemiesLayerEntity.Get<Position>();
-                    float enemyRadius = enemiesLayerEntity.Get<SphereCollider>().Radius;
+                    float enemyRadius = enemiesLayerEntity.Get<CircleCollider>().Radius;
 
-                    var distanceSqr = Math.Pow(position.X - enemyPosition.X, 2f) +
-                                      Math.Pow(position.Y - enemyPosition.Y, 2f);
+                    var distanceSqr = Vector2.SqrMagnitude(position.Value - enemyPosition.Value);
                     var radiusesSqr = Math.Pow(radius + enemyRadius, 2f);
 
                     if (distanceSqr < radiusesSqr)

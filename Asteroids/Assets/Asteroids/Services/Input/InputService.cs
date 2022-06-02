@@ -33,7 +33,6 @@ namespace Asteroids.Services.Input
             _laser.Enable();
         }
 
-
         public void Dispose()
         {
             _shipInputActions.Disable();
