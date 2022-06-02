@@ -1,7 +1,6 @@
 ﻿using Asteroids.Domain.Common;
 using Asteroids.Domain.Components.Asteroids;
 using Asteroids.Domain.Components.Common;
-using Asteroids.Domain.Services;
 using EcsCore;
 
 namespace Asteroids.Domain.Systems
@@ -38,6 +37,7 @@ namespace Asteroids.Domain.Systems
                 .Add<CircleCollider>()
                 .Add<CanBeTeleported>()
                 .Add<EnemiesLayer>()
+                .Add<ScoreForDestroy>()
                 .Add<Components.Ufo.Ufo>();
 
             asteroid.Get<ViewTag>().Tag = Tag.Ufo;
@@ -45,6 +45,7 @@ namespace Asteroids.Domain.Systems
             position.Value = intent.Point;
             asteroid.Get<Velocity>().Amount = 7f;
             asteroid.Get<CircleCollider>().Radius = 2f;
+            asteroid.Get<ScoreForDestroy>().Amount = 30;
         }
     }
 }

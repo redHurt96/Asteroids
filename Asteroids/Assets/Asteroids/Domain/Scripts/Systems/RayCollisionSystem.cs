@@ -44,7 +44,7 @@ namespace Asteroids.Domain.Systems
                     float minDistance = Mathf.Sqrt(otherRadius * otherRadius + lenght * lenght / 4) * 2;
 
                     if (sumOfDistances <= minDistance)
-                        other.Add<ColliderEnter>();
+                        other.Add<Destroy>();
                 });
             });
         }

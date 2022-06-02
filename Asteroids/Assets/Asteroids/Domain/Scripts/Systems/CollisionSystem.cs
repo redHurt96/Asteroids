@@ -39,11 +39,11 @@ namespace Asteroids.Domain.Systems
 
                     if (distanceSqr < radiusesSqr)
                     {
-                        if (!playerLayerEntity.Has<ColliderEnter>())
-                            playerLayerEntity.Add<ColliderEnter>();
+                        if (!playerLayerEntity.Has<Destroy>())
+                            playerLayerEntity.Add<Destroy>();
 
-                        if (!enemiesLayerEntity.Has<ColliderEnter>())
-                            enemiesLayerEntity.Add<ColliderEnter>();
+                        if (!enemiesLayerEntity.Has<Destroy>())
+                            enemiesLayerEntity.Add<Destroy>();
                     }
                 });
             });

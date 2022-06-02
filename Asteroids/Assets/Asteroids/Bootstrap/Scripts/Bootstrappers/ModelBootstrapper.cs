@@ -15,8 +15,9 @@ namespace Asteroids.Bootstrap.Bootstrappers
             var randomService = services.Get<IRandomService>();
 
             systems
+                .Add(new CreateScoreSystem())
                 .Add(new CollisionSystem())
-                .Add(new DestroyByCollisionSystem())
+                .Add(new AddScoreSystem())
                 .Add(new RayCollisionSystem())
 
                 .Add(new CreateShipSystem())
@@ -25,12 +26,12 @@ namespace Asteroids.Bootstrap.Bootstrappers
                 .Add(new MoveShipSystem(time))
                 .Add(new FrictionSystem(input, time))
                 .Add(new TeleportThroughBorderSystem(mapBorders))
-                
+
                 .Add(new ShootIntentSystem(input))
                 .Add(new CreateShootSystem())
                 .Add(new UpdateShootCooldownSystem(time))
                 .Add(new UpdateDestroyTimer(time))
-                
+
                 .Add(new LaserIntentSystem(input))
                 .Add(new UpdateLaserShootsCountSystem())
                 .Add(new CreateLaserSystem())
@@ -46,7 +47,9 @@ namespace Asteroids.Bootstrap.Bootstrappers
                 .Add(new CreateUfoIntentSystem(time, mapBorders, randomService))
                 .Add(new CreateUfoSystem())
                 .Add(new UfoToShipDirectionAssignSystem())
-                .Add(new UfoShootSystem());
+                .Add(new UfoShootSystem())
+
+                .Add(new DestroyByCollisionSystem());
         }
     }
 }

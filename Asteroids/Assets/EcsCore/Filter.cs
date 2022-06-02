@@ -34,6 +34,24 @@ namespace EcsCore
 
         public void ForEach(Action<Entity> forEachAction)
         {
+            var entities = GetEntitiesByConditions();
+
+            foreach (Entity entity in entities) 
+                forEachAction.Invoke(entity);
+        }
+
+        public void ForFirst(Action<Entity> action)
+        {
+            var entities = GetEntitiesByConditions();
+
+            if (entities.Count == 0)
+                return;
+
+            action.Invoke(entities.First());
+        }
+
+        private List<Entity> GetEntitiesByConditions()
+        {
             var entities = _world.Entities;
 
             foreach (var (type, mode) in _conditions)
@@ -41,11 +59,10 @@ namespace EcsCore
                     .Where(x => s_modeConditions[mode].Invoke(x, type))
                     .ToList();
 
-            foreach (Entity entity in entities) 
-                forEachAction.Invoke(entity);
+            return entities;
         }
 
-        internal enum Mode
+        private enum Mode
         {
             Include,
             Exclude

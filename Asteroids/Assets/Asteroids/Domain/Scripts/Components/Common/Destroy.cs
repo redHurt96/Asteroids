@@ -2,7 +2,7 @@
 
 namespace Asteroids.Domain.Components.Common
 {
-    public class ColliderEnter : IComponent
+    public class Destroy : IComponent
     {
     }
 }

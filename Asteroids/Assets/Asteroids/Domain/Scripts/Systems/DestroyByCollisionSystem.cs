@@ -12,7 +12,7 @@ namespace Asteroids.Domain.Systems
         {
             _world = world;
             _filter = new Filter(world)
-                .Include<ColliderEnter>();
+                .Include<Destroy>();
         }
 
         public void Update() => 

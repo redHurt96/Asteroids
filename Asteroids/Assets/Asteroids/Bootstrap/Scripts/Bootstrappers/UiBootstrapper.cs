@@ -13,6 +13,8 @@ namespace Asteroids.Bootstrap.Bootstrappers
             Transform canvas = services.Get<ISceneObjectsService>().Canvas.transform;
 
             systems
+                .Add(new CreateScorePanelSystem(canvas))
+                .Add(new UpdateScorePanelSystem())
                 .Add(new CreateCoordinatePanelSystem(canvas))
                 .Add(new UpdateCoordinatesPanelSystem())
                 .Add(new CreateAnglePanelSystem(canvas))

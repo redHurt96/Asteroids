@@ -43,6 +43,7 @@ namespace Asteroids.Domain.Systems
                 .Add<CircleCollider>()
                 .Add<CanBeTeleported>()
                 .Add<EnemiesLayer>()
+                .Add<ScoreForDestroy>()
                 .Add<BreaksDownIntoSmallAsteroids>();
 
             asteroid.Get<ViewTag>().Tag = Tag.Asteroid;
@@ -51,6 +52,7 @@ namespace Asteroids.Domain.Systems
             asteroid.Get<Rotation>().Angle = _random.Direction;
             asteroid.Get<Velocity>().Amount = 7f;
             asteroid.Get<CircleCollider>().Radius = 2f;
+            asteroid.Get<ScoreForDestroy>().Amount = 10;
         }
     }
 }
