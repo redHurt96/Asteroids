@@ -1,5 +1,6 @@
 using Asteroids.Domain.Services;
 using Asteroids.Domain.Systems;
+using Asteroids.Domain.Systems.Ufo;
 using EcsCore;
 
 namespace Asteroids.Bootstrap.Bootstrappers
@@ -36,7 +37,12 @@ namespace Asteroids.Bootstrap.Bootstrappers
 
                 .Add(new CreateAsteroidIntentSystem(time, mapBorders, randomService))
                 .Add(new CreateAsteroidSystem(randomService))
-                .Add(new CreateSmallAsteroidsSystem(randomService));
+                .Add(new CreateSmallAsteroidsSystem(randomService))
+
+                .Add(new CreateUfoIntentSystem(time, mapBorders, randomService))
+                .Add(new CreateUfoSystem())
+                .Add(new UfoToShipDirectionAssignSystem())
+                .Add(new UfoShootSystem());
         }
     }
 }

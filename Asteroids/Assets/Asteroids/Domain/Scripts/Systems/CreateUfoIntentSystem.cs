@@ -4,28 +4,28 @@ using EcsCore;
 
 namespace Asteroids.Domain.Systems
 {
-    public class CreateAsteroidIntentSystem : IInitSystem, IUpdateSystem
+    public class CreateUfoIntentSystem : IInitSystem, IUpdateSystem
     {
         private readonly ITimeService _timeService;
-        private readonly IMapBorderService _mapBorderService;
+        private readonly IMapBorderService _map;
         private readonly IRandomService _randomService;
         private float _currentTime;
         private EcsWorld _world;
 
-        public CreateAsteroidIntentSystem(
+        public CreateUfoIntentSystem(
             ITimeService timeService,
-            IMapBorderService mapBorderService,
+            IMapBorderService map,
             IRandomService randomService)
         {
             _timeService = timeService;
-            _mapBorderService = mapBorderService;
+            _map = map;
             _randomService = randomService;
         }
 
         public void Init(EcsWorld world)
         {
             _world = world;
-            _currentTime = Settings.ASTEROIDS_SPAWN_TIME;
+            _currentTime = Settings.UFO_SPAWN_TIME;
         }
 
         public void Update()
@@ -35,16 +35,16 @@ namespace Asteroids.Domain.Systems
             if (_currentTime <= 0f)
             {
                 CreateSpawnIntent();
-                _currentTime = Settings.ASTEROIDS_SPAWN_TIME;
+                _currentTime = Settings.UFO_SPAWN_TIME;
             }
         }
 
         private void CreateSpawnIntent()
         {
-            var entity = _world.NewEntity().Add<CreateAsteroidIntent>();
-            var intent = entity.Get<CreateAsteroidIntent>();
+            Entity entity = _world.NewEntity().Add<CreateUfoIntent>();
+            CreateUfoIntent intent = entity.Get<CreateUfoIntent>();
 
-            intent.Point = _randomService.RandomPosition(_mapBorderService.Width, _mapBorderService.Height);
+            intent.Point = _randomService.RandomPosition(_map.Width, _map.Height);
         }
     }
 }

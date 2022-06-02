@@ -35,22 +35,20 @@ namespace Asteroids.Presentation.Scene.Systems
 
         private static void SetupView(Entity entity, GameObject view)
         {
-            Vector2 position = entity.Get<Position>().Value;
-            float angle = entity.Get<Rotation>().Angle;
             string tag = entity.Get<ViewTag>().Tag.ToString();
             Sprite sprite = Resources.Load<Sprite>(tag);
 
             view.name = tag;
-            view.transform.position = position;
-            view.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             view.GetComponentInChildren<SpriteRenderer>().sprite = sprite;
         }
 
         private static void AddViewComponent(Entity entity, GameObject view)
         {
             entity.Add<View>();
-            entity.Add<ObjectView>();
             entity.Get<View>().GameObject = view;
+
+            if (PresentationSettings.ViewTagToRotationPossibility[entity.Get<ViewTag>().Tag]) 
+                entity.Add<RotateView>();
         }
     }
 }

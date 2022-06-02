@@ -43,7 +43,7 @@ namespace Asteroids.Domain.Systems
 
             entity.Get<Rotation>().Angle = spawnPosition.DirectionAngle;
             entity.Get<RayCollider>().Lenght = 30f;
-            entity.Get<DestroyTimer>().Left = 1f;
+            entity.Get<DestroyTimer>().Left = .3f;
         }
     }
 }

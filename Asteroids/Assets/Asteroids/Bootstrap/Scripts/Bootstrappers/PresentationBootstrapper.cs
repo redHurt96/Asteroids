@@ -15,7 +15,8 @@ namespace Asteroids.Bootstrap.Bootstrappers
 
             systems
                 .Add(new CreateViewSystem())
-                .Add(new UpdateViewSystem())
+                .Add(new UpdateViewPositionSystem())
+                .Add(new UpdateViewRotationSystem())
                 .Add(new DestroyViewSystem())
 
                 .Add(new AssignImaginaryRotationSystem(random))

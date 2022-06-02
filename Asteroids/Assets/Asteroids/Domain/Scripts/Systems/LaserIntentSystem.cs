@@ -45,7 +45,7 @@ namespace Asteroids.Domain.Systems
 
         private void CreateIntent(Entity entity)
         {
-            entity.CreateSpawnPosition(_world, out var intentEntity);
+            entity.CreateSpawnPosition(_world, true, out var intentEntity);
             intentEntity.Add<CreateLaserIntent>();
         }
 
