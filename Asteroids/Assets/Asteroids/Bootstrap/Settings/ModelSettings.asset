@@ -15,8 +15,8 @@ MonoBehaviour:
   _shipSettings:
     Tag: 0
     MaxVelocity: 18
-    RotationSpeed: 180
-    AccelerationSpeed: 15
+    RotationSpeed: 210
+    AccelerationSpeed: 18
     Friction: 15
     ColliderRadius: 2
     MaxLaserShoots: 5
@@ -32,5 +32,9 @@ MonoBehaviour:
     ShootCooldown: 3
     ShotOffset: 2
   _asteroidSettings:
+    Tag: 2
     SmallerAsteroidsCount: 3
     SpawnTime: 2
+    Velocity: 7
+    ColliderRadius: 2
+    ScoreForDestroy: 10

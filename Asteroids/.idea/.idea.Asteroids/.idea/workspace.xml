@@ -2,44 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="352b035a-4424-4c11-9933-4598baefaa0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/AsteroidSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Services/ISettingsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Services/ISettingsService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/ShipSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/ShipSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/UfoSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/UfoSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Services/ModelSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Services/ModelSettings.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/Bootstrappers/ModelBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/Bootstrappers/ModelBootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/Bootstrappers/UiBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/Bootstrappers/UiBootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Common/Parent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Common/Parent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Extensions/EntityExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Extensions/EntityExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Services/IMapBorderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Services/IMapBorderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Settings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Settings.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/AsteroidSettings.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateAsteroidIntentSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateAsteroidIntentSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateAsteroidSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateAsteroidSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateShipSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateShipSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateSmallAsteroidsSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateSmallAsteroidsSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateUfoIntentSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateUfoIntentSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateUfoSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateUfoSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/LaserIntentSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/LaserIntentSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/ShootIntentSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/ShootIntentSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/Ufo/UfoShootSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/Ufo/UfoShootSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/UpdatePositionByParentSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/UpdatePositionByParentSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scene/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scene/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scene/Scripts/Systems/AssignImaginaryRotationSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scene/Scripts/Systems/AssignImaginaryRotationSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Resources/ScorePanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Resources/ScorePanel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateAnglePanelSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateAnglePanelSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateCoordinatePanelSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateCoordinatePanelSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateLaserShootRestorePanelSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateLaserShootRestorePanelSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateLaserShootsCountPanelSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateLaserShootsCountPanelSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateScorePanelSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateScorePanelSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateVelocityPanelSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateVelocityPanelSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Services/MapBorderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Services/MapBorderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/Bootstrappers/PresentationBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/Bootstrappers/PresentationBootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scene/Scripts/Systems/CreateViewSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scene/Scripts/Systems/CreateViewSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +102,7 @@
       <workItem from="1654096018868" duration="3838000" />
       <workItem from="1654109480324" duration="5641000" />
       <workItem from="1654119994831" duration="8697000" />
-      <workItem from="1654170040457" duration="21078000" />
+      <workItem from="1654170040457" duration="22546000" />
     </task>
     <servers />
   </component>

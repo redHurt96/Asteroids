@@ -15,7 +15,7 @@ namespace Asteroids.Bootstrap.Bootstrappers
             IResourcesService resources = services.Get<IResourcesService>();
 
             systems
-                .Add(new CreateViewSystem(resources))
+                .Add(new CreateViewSystem(resources, sceneObjects))
                 .Add(new UpdateViewPositionSystem())
                 .Add(new UpdateViewRotationSystem())
                 .Add(new DestroyViewSystem())

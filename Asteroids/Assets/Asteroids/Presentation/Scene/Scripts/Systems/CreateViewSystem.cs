@@ -9,12 +9,17 @@ namespace Asteroids.Presentation.Scene.Systems
 {
     public class CreateViewSystem : IInitSystem, IUpdateSystem
     {
-        private readonly IResourcesService _resources;
         private Filter _filter;
         private GameObject _defaultViewResource;
 
-        public CreateViewSystem(IResourcesService resources) => 
+        private readonly IResourcesService _resources;
+        private readonly ISceneObjectsService _sceneObjects;
+
+        public CreateViewSystem(IResourcesService resources, ISceneObjectsService sceneObjects)
+        {
             _resources = resources;
+            _sceneObjects = sceneObjects;
+        }
 
         public void Init(EcsWorld world)
         {
@@ -37,7 +42,7 @@ namespace Asteroids.Presentation.Scene.Systems
         }
 
         private GameObject CreateView() => 
-            Object.Instantiate(_defaultViewResource);
+            Object.Instantiate(_defaultViewResource, _sceneObjects.SpaceObjectsParent);
 
         private void SetupView(Entity entity, GameObject view)
         {
