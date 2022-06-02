@@ -49,8 +49,10 @@ namespace Asteroids.Presentation.Scene.Systems
         private static void AddViewComponent(Entity entity, GameObject view)
         {
             entity.Add<View>();
-            entity.Add<ObjectView>();
             entity.Get<View>().GameObject = view;
+
+            if (PresentationSettings.ViewTagToRotationPossibility[entity.Get<ViewTag>().Tag]) 
+                entity.Add<RotateView>();
         }
     }
 }
