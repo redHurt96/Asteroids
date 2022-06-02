@@ -21,7 +21,7 @@ namespace Asteroids.Presentation.UI.Scripts.Systems
                 ValuePanel panel = entity.Get<CoordinatesObserver>().Panel;
                 Vector2 position = entity.Get<Position>().Value;
 
-                panel.SetValue($"{position.x:F2};{position.y:F2}");
+                panel.SetValue($"{position.x:F2} ; {position.y:F2}");
             });
     }
 }

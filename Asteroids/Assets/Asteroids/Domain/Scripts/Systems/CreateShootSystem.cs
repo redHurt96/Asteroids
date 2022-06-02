@@ -29,7 +29,7 @@ namespace Asteroids.Domain.Systems
             entity
                 .Add<Position>()
                 .Add<Rotation>()
-                .Add<ObjectTag>()
+                .Add<ViewTag>()
                 .Add<Velocity>()
                 .Add<DestroyTimer>()
                 .Add<CircleCollider>();
@@ -48,7 +48,7 @@ namespace Asteroids.Domain.Systems
             entity.Get<Velocity>().Amount = 30f;
             entity.Get<CircleCollider>().Radius = .5f;
             entity.Get<DestroyTimer>().Left = 5f;
-            entity.Get<ObjectTag>().Tag = Tag.Bullet;
+            entity.Get<ViewTag>().Tag = Tag.Bullet;
         }
     }
 }

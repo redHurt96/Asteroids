@@ -1,21 +1,18 @@
-﻿using Asteroids.Presentation.UI.Scripts.Systems;
+﻿using Asteroids.Presentation.Services;
+using Asteroids.Presentation.UI.Scripts.Systems;
+using Asteroids.Services;
 using EcsCore;
 using UnityEngine;
 
-namespace Asteroids.Presentation.UI.Scripts
+namespace Asteroids.Bootstrap.Bootstrappers
 {
-    public class UiBootstrapper
+    public class UiBootstrapper : IBootstrapper
     {
-        private readonly SystemsArray _systemsArray;
-
-        public UiBootstrapper(SystemsArray systemsArray) => 
-            _systemsArray = systemsArray;
-
-        public void Setup()
+        public void Setup(SystemsArray systems, ServiceLocator.Services services)
         {
-            Transform canvas = GameObject.Find("Canvas").transform;
+            Transform canvas = services.Get<ISceneObjectsService>().Canvas.transform;
 
-            _systemsArray
+            systems
                 .Add(new CreateCoordinatePanelSystem(canvas))
                 .Add(new UpdateCoordinatesPanelSystem())
                 .Add(new CreateAnglePanelSystem(canvas))

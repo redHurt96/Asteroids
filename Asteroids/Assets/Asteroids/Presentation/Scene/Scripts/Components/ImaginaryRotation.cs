@@ -1,7 +1,7 @@
 ﻿using EcsCore;
 using UnityEngine;
 
-namespace Asteroids.Presentation.Components
+namespace Asteroids.Presentation.Scene.Components
 {
     public class ImaginaryRotation : IComponent
     {

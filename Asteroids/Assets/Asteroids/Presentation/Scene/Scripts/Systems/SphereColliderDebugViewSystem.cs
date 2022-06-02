@@ -2,7 +2,7 @@
 using EcsCore;
 using UnityEngine;
 
-namespace Asteroids.Presentation.Systems
+namespace Asteroids.Presentation.Scene.Systems
 {
     public class SphereColliderDebugViewSystem : IInitSystem, IUpdateSystem
     {

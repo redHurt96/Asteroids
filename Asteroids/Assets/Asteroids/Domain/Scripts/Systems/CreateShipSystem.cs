@@ -15,7 +15,7 @@ namespace Asteroids.Domain.Systems
 
         private static Entity CreateShip(EcsWorld world) =>
             world.NewEntity()
-                .Add<ObjectTag>()
+                .Add<ViewTag>()
                 .Add<Ship>()
                 .Add<Position>()
                 .Add<Rotation>()
@@ -35,7 +35,7 @@ namespace Asteroids.Domain.Systems
 
         private static void Setup(Entity ship)
         {
-            ship.Get<ObjectTag>().Tag = Tag.SpaceShip;
+            ship.Get<ViewTag>().Tag = Tag.SpaceShip;
             ship.Get<MaxVelocity>().Amount = 18f;
             ship.Get<RotationSpeed>().Amount = 180f;
             ship.Get<AccelerationSpeed>().Amount = 15f;

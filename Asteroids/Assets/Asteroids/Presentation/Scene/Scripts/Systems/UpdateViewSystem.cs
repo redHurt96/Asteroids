@@ -1,10 +1,9 @@
-﻿using Asteroids.Domain.Components;
-using Asteroids.Domain.Components.Common;
-using Asteroids.Presentation.Components;
+﻿using Asteroids.Domain.Components.Common;
+using Asteroids.Presentation.Scene.Components;
 using EcsCore;
 using UnityEngine;
 
-namespace Asteroids.Presentation.Systems
+namespace Asteroids.Presentation.Scene.Systems
 {
     public class UpdateViewSystem : IInitSystem, IUpdateSystem
     {

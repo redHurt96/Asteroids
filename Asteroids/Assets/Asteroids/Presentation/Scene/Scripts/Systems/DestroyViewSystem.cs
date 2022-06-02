@@ -1,8 +1,8 @@
-﻿using Asteroids.Presentation.Components;
+﻿using Asteroids.Presentation.Scene.Components;
 using EcsCore;
 using UnityEngine;
 
-namespace Asteroids.Presentation.Systems
+namespace Asteroids.Presentation.Scene.Systems
 {
     public class DestroyViewSystem : IInitSystem, IUpdateSystem
     {

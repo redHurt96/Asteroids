@@ -5,9 +5,9 @@ namespace ServiceLocator
 {
     public class Services
     {
-        private readonly Dictionary<Type, IService> _services = new Dictionary<Type, IService>();
+        private readonly Dictionary<Type, object> _services = new();
 
-        public Services RegisterSingle<T>(T service) where T : IService
+        public Services RegisterSingle<T>(T service)
         {
             if (_services.ContainsKey(typeof(T)))
                 throw new Exception($"Already instantiated service {typeof(T)}");
@@ -17,7 +17,7 @@ namespace ServiceLocator
             return this;
         }
 
-        private T GetSingle<T>() where T : IService
+        public T Get<T>()
         {
             if (!_services.ContainsKey(typeof(T)))
                 throw new UnavailableServiceException(typeof(T));

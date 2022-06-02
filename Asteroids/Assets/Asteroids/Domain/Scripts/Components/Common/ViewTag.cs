@@ -3,7 +3,7 @@ using EcsCore;
 
 namespace Asteroids.Domain.Components.Common
 {
-    public class ObjectTag : IComponent
+    public class ViewTag : IComponent
     {
         public Tag Tag;
     }

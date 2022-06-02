@@ -1,7 +1,6 @@
-using Asteroids.Domain;
+using Asteroids.Bootstrap.Bootstrappers;
 using Asteroids.Domain.Services;
-using Asteroids.Presentation;
-using Asteroids.Presentation.UI.Scripts;
+using Asteroids.Presentation.Services;
 using Asteroids.Services;
 using Asteroids.Services.Input;
 using EcsCore;
@@ -11,15 +10,18 @@ namespace Asteroids.Bootstrap
 {
     public class EntryPoint : MonoBehaviour
     {
+        [SerializeField] private SceneObjects _sceneObjects;
+
         private EcsWorld _world;
         private SystemsArray _systems;
+        private ServiceLocator.Services _services;
 
-        private IInputService _inputService;
-        private ITimeService _timeService;
-        private IMapBorderService _mapBorderService;
-        private IRandomService _randomService;
-
-        [SerializeField] private Camera _camera;
+        private IBootstrapper[] _bootstrappers = 
+        {
+            new ModelBootstrapper(),
+            new PresentationBootstrapper(),
+            new UiBootstrapper(),
+        };
 
         private void Start()
         {
@@ -27,11 +29,7 @@ namespace Asteroids.Bootstrap
             _systems = new SystemsArray();
 
             SetupServices();
-            SetupModel();
-            SetupPresentations();
-            SetupUi();
-
-            _systems.Init(_world);
+            SetupBootstrappers();
         }
 
         private void Update() => 
@@ -40,24 +38,20 @@ namespace Asteroids.Bootstrap
         private void OnDestroy() =>
             _systems.Dispose();
 
-        private void SetupServices()
+        private void SetupServices() =>
+            _services = new ServiceLocator.Services()
+                .RegisterSingle<ISceneObjectsService>(_sceneObjects)
+                .RegisterSingle<IInputService>(new InputService())
+                .RegisterSingle<ITimeService>(new TimeService())
+                .RegisterSingle<IMapBorderService>(new MapBorderService(_sceneObjects))
+                .RegisterSingle<IRandomService>(new RandomService());
+
+        private void SetupBootstrappers()
         {
-            _inputService = new InputService();
-            _timeService = new TimeService();
-            _mapBorderService = new MapBorderService(_camera);
-            _randomService = new RandomService();
+            foreach (IBootstrapper bootstrapper in _bootstrappers) 
+                bootstrapper.Setup(_systems, _services);
+
+            _systems.Init(_world);
         }
-
-        private void SetupModel() =>
-            new ModelBootstrapper(_systems, _inputService, _timeService, _mapBorderService, _randomService)
-                .Setup();
-
-        private void SetupPresentations() =>
-            new PresentationBootstrapper(_systems, _randomService, _timeService)
-                .Setup();
-
-        private void SetupUi() =>
-            new UiBootstrapper(_systems)
-                .Setup();
     }
 }

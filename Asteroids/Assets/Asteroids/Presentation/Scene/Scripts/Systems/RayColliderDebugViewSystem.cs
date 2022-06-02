@@ -4,7 +4,7 @@ using Asteroids.Domain.Components.SpaceShip;
 using EcsCore;
 using UnityEngine;
 
-namespace Asteroids.Presentation.Systems
+namespace Asteroids.Presentation.Scene.Systems
 {
     public class RayColliderDebugViewSystem : IInitSystem, IUpdateSystem
     {

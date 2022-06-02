@@ -13,7 +13,10 @@ namespace Asteroids.Services
         public float RandomSign(float value) => 
             IsTrue ? value : -value;
 
-        public float RangeWithRandomSign(float min, float max) => 
-            RandomSign(Range(min, max));
+        // public float RangeWithRandomSign(float min, float max) => 
+        //     RandomSign(Range(min, max));
+
+        public float Direction => 
+            Range(0f, 360f);
     }
 }

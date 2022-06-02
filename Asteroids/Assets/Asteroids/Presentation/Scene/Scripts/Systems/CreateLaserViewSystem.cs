@@ -1,16 +1,22 @@
 ﻿using Asteroids.Domain.Components.Common;
 using Asteroids.Domain.Components.Extensions;
 using Asteroids.Domain.Components.SpaceShip;
-using Asteroids.Presentation.Components;
+using Asteroids.Presentation.Scene.Components;
+using Asteroids.Presentation.Services;
 using EcsCore;
 using UnityEngine;
 
-namespace Asteroids.Presentation.Systems
+namespace Asteroids.Presentation.Scene.Systems
 {
     public class CreateLaserViewSystem : IInitSystem, IUpdateSystem
     {
         private Filter _filter;
         private LineRenderer _viewResource;
+
+        private readonly ISceneObjectsService _sceneObjects;
+
+        public CreateLaserViewSystem(ISceneObjectsService sceneObjects) => 
+            _sceneObjects = sceneObjects;
 
         public void Init(EcsWorld world)
         {
@@ -29,7 +35,7 @@ namespace Asteroids.Presentation.Systems
                 Vector2 direction = entity.Get<Rotation>().GetDirection();
                 float lenght = entity.Get<RayCollider>().Lenght;
 
-                var viewInstance = Object.Instantiate(_viewResource);
+                var viewInstance = Object.Instantiate(_viewResource, _sceneObjects.SpaceObjectsParent);
                 viewInstance.positionCount = 2;
                 viewInstance.SetPosition(0, position);
                 viewInstance.SetPosition(1, position + direction * lenght);

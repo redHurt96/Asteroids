@@ -1,9 +1,9 @@
 ﻿using Asteroids.Domain.Components.Common;
-using Asteroids.Presentation.Components;
+using Asteroids.Presentation.Scene.Components;
 using EcsCore;
 using UnityEngine;
 
-namespace Asteroids.Presentation.Systems
+namespace Asteroids.Presentation.Scene.Systems
 {
     public class CreateViewSystem : IInitSystem, IUpdateSystem
     {
@@ -14,7 +14,7 @@ namespace Asteroids.Presentation.Systems
         {
             _defaultViewResource = Resources.Load("DefaultView") as GameObject;
             _filter = new Filter(world)
-                .Include<ObjectTag>()
+                .Include<ViewTag>()
                 .Include<Position>()
                 .Include<Rotation>()
                 .Exclude<View>();
@@ -37,7 +37,7 @@ namespace Asteroids.Presentation.Systems
         {
             Vector2 position = entity.Get<Position>().Value;
             float angle = entity.Get<Rotation>().Angle;
-            string tag = entity.Get<ObjectTag>().Tag.ToString();
+            string tag = entity.Get<ViewTag>().Tag.ToString();
             Sprite sprite = Resources.Load<Sprite>(tag);
 
             view.name = tag;

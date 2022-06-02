@@ -36,18 +36,19 @@ namespace Asteroids.Domain.Systems
         private void CreateAsteroid(CreateAsteroidIntent intent)
         {
             Entity asteroid = _world.NewEntity()
-                .Add<ObjectTag>()
+                .Add<ViewTag>()
                 .Add<Position>()
                 .Add<Rotation>()
                 .Add<Velocity>()
                 .Add<CircleCollider>()
                 .Add<CanBeTeleported>()
-                .Add<EnemiesLayer>();
+                .Add<EnemiesLayer>()
+                .Add<BreaksDownIntoSmallAsteroids>();
 
-            asteroid.Get<ObjectTag>().Tag = Tag.Asteroid;
+            asteroid.Get<ViewTag>().Tag = Tag.Asteroid;
             var position = asteroid.Get<Position>();
             position.Value = intent.Point;
-            asteroid.Get<Rotation>().Angle = _random.RangeWithRandomSign(5f, 175f);
+            asteroid.Get<Rotation>().Angle = _random.Direction;
             asteroid.Get<Velocity>().Amount = 7f;
             asteroid.Get<CircleCollider>().Radius = 2f;
         }

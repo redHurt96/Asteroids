@@ -2,9 +2,10 @@
 {
     public enum Tag
     {
-        SpaceShip,
+        SpaceShip = 0,
         Ufo,
         Asteroid,
-        Bullet
+        Bullet,
+        SmallAsteroid
     }
 }
