@@ -1,5 +1,4 @@
-﻿using Asteroids.Domain.Common;
-using Asteroids.Domain.Components.Asteroids;
+﻿using Asteroids.Domain.Components.Asteroids;
 using Asteroids.Domain.Components.Common;
 using Asteroids.Domain.Services;
 using EcsCore;
@@ -12,9 +11,13 @@ namespace Asteroids.Domain.Systems
         private EcsWorld _world;
 
         private readonly IRandomService _random;
+        private readonly AsteroidSettings _settings;
 
-        public CreateAsteroidSystem(IRandomService random) => 
+        public CreateAsteroidSystem(IRandomService random, ISettingsService settings)
+        {
             _random = random;
+            _settings = settings.Asteroid;
+        }
 
         public void Init(EcsWorld world)
         {
@@ -46,13 +49,13 @@ namespace Asteroids.Domain.Systems
                 .Add<ScoreForDestroy>()
                 .Add<BreaksDownIntoSmallAsteroids>();
 
-            asteroid.Get<ViewTag>().Tag = Tag.Asteroid;
+            asteroid.Get<ViewTag>().Tag = _settings.Tag;
             var position = asteroid.Get<Position>();
             position.Value = intent.Point;
             asteroid.Get<Rotation>().Angle = _random.Direction;
-            asteroid.Get<Velocity>().Amount = 7f;
-            asteroid.Get<CircleCollider>().Radius = 2f;
-            asteroid.Get<ScoreForDestroy>().Amount = 10;
+            asteroid.Get<Velocity>().Amount = _settings.Velocity;
+            asteroid.Get<CircleCollider>().Radius = _settings.ColliderRadius;
+            asteroid.Get<ScoreForDestroy>().Amount = _settings.ScoreForDestroy;
         }
     }
 }

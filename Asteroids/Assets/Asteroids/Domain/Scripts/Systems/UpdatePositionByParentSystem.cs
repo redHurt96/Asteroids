@@ -18,11 +18,11 @@ namespace Asteroids.Domain.Systems
             _filter.ForEach(entity =>
             {
                 Position position = entity.Get<Position>();
-                Entity parent = entity.Get<Parent>().Entity;
-                Vector2 parentPosition = parent.Get<Position>().Value;
-                Vector2 direction = parent.Get<Rotation>().GetDirection();
+                Parent parent = entity.Get<Parent>();
+                Vector2 parentPosition = parent.Entity.Get<Position>().Value;
+                Vector2 direction = parent.Entity.Get<Rotation>().GetDirection();
 
-                position.Value = parentPosition + direction * Settings.DISTANCE_TO_SHOT;
+                position.Value = parentPosition + direction * parent.Distance;
             });
     }
 }

@@ -9,23 +9,27 @@ namespace Asteroids.Domain.Systems
         private readonly ITimeService _timeService;
         private readonly IMapBorderService _map;
         private readonly IRandomService _randomService;
+        private readonly UfoSettings _settings;
+
         private float _currentTime;
         private EcsWorld _world;
 
         public CreateUfoIntentSystem(
             ITimeService timeService,
             IMapBorderService map,
-            IRandomService randomService)
+            IRandomService randomService,
+            ISettingsService settings)
         {
             _timeService = timeService;
             _map = map;
             _randomService = randomService;
+            _settings = settings.Ufo;
         }
 
         public void Init(EcsWorld world)
         {
             _world = world;
-            _currentTime = Settings.UFO_SPAWN_TIME;
+            RestoreTime();
         }
 
         public void Update()
@@ -35,7 +39,7 @@ namespace Asteroids.Domain.Systems
             if (_currentTime <= 0f)
             {
                 CreateSpawnIntent();
-                _currentTime = Settings.UFO_SPAWN_TIME;
+                RestoreTime();
             }
         }
 
@@ -46,5 +50,8 @@ namespace Asteroids.Domain.Systems
 
             intent.Point = _randomService.RandomPosition(_map.Width, _map.Height);
         }
+
+        private void RestoreTime() => 
+            _currentTime = _settings.SpawnTime;
     }
 }

@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneObjects: {fileID: 1389551641}
+  _modelSettings: {fileID: 11400000, guid: 2fa9b19cad09064448162aa03218e041, type: 2}
 --- !u!1 &1676524705
 GameObject:
   m_ObjectHideFlags: 0

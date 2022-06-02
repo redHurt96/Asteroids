@@ -13,26 +13,27 @@ namespace Asteroids.Bootstrap.Bootstrappers
             var time = services.Get<ITimeService>();
             var mapBorders = services.Get<IMapBorderService>();
             var randomService = services.Get<IRandomService>();
+            var settings = services.Get<ISettingsService>();
 
             systems
                 .Add(new CreateScoreSystem())
                 .Add(new CollisionSystem())
-                .Add(new AddScoreSystem())
                 .Add(new RayCollisionSystem())
+                .Add(new AddScoreSystem())
 
-                .Add(new CreateShipSystem())
+                .Add(new CreateShipSystem(settings))
                 .Add(new AccelerationSystem(input, time))
                 .Add(new RotationSystem(input, time))
                 .Add(new MoveShipSystem(time))
                 .Add(new FrictionSystem(input, time))
                 .Add(new TeleportThroughBorderSystem(mapBorders))
 
-                .Add(new ShootIntentSystem(input))
+                .Add(new ShootIntentSystem(input, settings))
                 .Add(new CreateShootSystem())
                 .Add(new UpdateShootCooldownSystem(time))
                 .Add(new UpdateDestroyTimer(time))
 
-                .Add(new LaserIntentSystem(input))
+                .Add(new LaserIntentSystem(input, settings))
                 .Add(new UpdateLaserShootsCountSystem())
                 .Add(new CreateLaserSystem())
                 .Add(new UpdateLaserCooldownSystem(time))
@@ -40,14 +41,14 @@ namespace Asteroids.Bootstrap.Bootstrappers
                 .Add(new UpdatePositionByParentSystem())
                 .Add(new UpdateRotationByParentSystem())
 
-                .Add(new CreateAsteroidIntentSystem(time, mapBorders, randomService))
-                .Add(new CreateAsteroidSystem(randomService))
-                .Add(new CreateSmallAsteroidsSystem(randomService))
+                .Add(new CreateAsteroidIntentSystem(time, mapBorders, randomService, settings))
+                .Add(new CreateAsteroidSystem(randomService, settings))
+                .Add(new CreateSmallAsteroidsSystem(randomService, settings))
 
-                .Add(new CreateUfoIntentSystem(time, mapBorders, randomService))
-                .Add(new CreateUfoSystem())
+                .Add(new CreateUfoIntentSystem(time, mapBorders, randomService, settings))
+                .Add(new CreateUfoSystem(settings))
                 .Add(new UfoToShipDirectionAssignSystem())
-                .Add(new UfoShootSystem())
+                .Add(new UfoShootSystem(settings))
 
                 .Add(new DestroyByCollisionSystem());
         }

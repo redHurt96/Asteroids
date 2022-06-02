@@ -9,11 +9,16 @@ namespace Asteroids.Domain.Systems
     public class LaserIntentSystem : IInitSystem, IUpdateSystem
     {
         private readonly IInputService _input;
+        private readonly ShipSettings _settings;
+
         private EcsWorld _world;
         private Filter _filter;
 
-        public LaserIntentSystem(IInputService input) => 
+        public LaserIntentSystem(IInputService input, ISettingsService settings)
+        {
             _input = input;
+            _settings = settings.Ship;
+        }
 
         public void Init(EcsWorld world)
         {
@@ -30,7 +35,7 @@ namespace Asteroids.Domain.Systems
         {
             if (!_input.CanShootLaser)
                 return;
-            
+
             _filter.ForEach(entity =>
             {
                 var shootsCount = entity.Get<LaserShootsCount>().Left;
@@ -45,16 +50,18 @@ namespace Asteroids.Domain.Systems
 
         private void CreateIntent(Entity entity)
         {
-            entity.CreateSpawnPosition(_world, true, out var intentEntity);
+            entity.CreateSpawnPosition(_world, _settings.ShotOffset, true, out var intentEntity);
             intentEntity.Add<CreateLaserIntent>();
             intentEntity.Add<Parent>();
-            intentEntity.Get<Parent>().Entity = entity;
+            Parent parent = intentEntity.Get<Parent>();
+            parent.Entity = entity;
+            parent.Distance = _settings.ShotOffset;
         }
 
         private void AddCooldown(Entity entity)
         {
             entity.Add<LaserCooldown>();
-            entity.Get<LaserCooldown>().Time = 1f;
+            entity.Get<LaserCooldown>().Time = _settings.LaserCooldown;
         }
     }
 }

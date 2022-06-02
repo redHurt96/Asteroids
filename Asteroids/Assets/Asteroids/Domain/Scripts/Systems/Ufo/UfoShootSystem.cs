@@ -1,6 +1,7 @@
 ﻿using Asteroids.Domain.Components.Common;
 using Asteroids.Domain.Components.Extensions;
 using Asteroids.Domain.Components.SpaceShip;
+using Asteroids.Domain.Services;
 using EcsCore;
 
 namespace Asteroids.Domain.Systems.Ufo
@@ -9,6 +10,11 @@ namespace Asteroids.Domain.Systems.Ufo
     {
         private EcsWorld _world;
         private Filter _filter;
+
+        private readonly UfoSettings _settings;
+
+        public UfoShootSystem(ISettingsService settings) => 
+            _settings = settings.Ufo;
 
         public void Init(EcsWorld world)
         {
@@ -24,11 +30,11 @@ namespace Asteroids.Domain.Systems.Ufo
         {
             _filter.ForEach(entity =>
             {
-                entity.CreateSpawnPosition(_world, false, out var shootEntity);
+                entity.CreateSpawnPosition(_world, _settings.ShotOffset, false, out var shootEntity);
                 shootEntity.Add<CreateBulletIntent>();
 
                 entity.Add<ShootCooldown>();
-                entity.Get<ShootCooldown>().Time = Settings.UFO_SHOOT_COOLDOWN;
+                entity.Get<ShootCooldown>().Time = _settings.ShootCooldown;
             });
         }
     }

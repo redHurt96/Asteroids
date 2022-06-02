@@ -1,5 +1,4 @@
-﻿using Asteroids.Domain.Common;
-using Asteroids.Domain.Components.Common;
+﻿using Asteroids.Domain.Components.Common;
 using Asteroids.Domain.Services;
 using Asteroids.Presentation.Scene.Components;
 using EcsCore;

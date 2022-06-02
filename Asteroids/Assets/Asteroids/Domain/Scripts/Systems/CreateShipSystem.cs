@@ -1,12 +1,18 @@
 ﻿using Asteroids.Domain.Common;
 using Asteroids.Domain.Components.Common;
 using Asteroids.Domain.Components.SpaceShip;
+using Asteroids.Domain.Services;
 using EcsCore;
 
 namespace Asteroids.Domain.Systems
 {
     public class CreateShipSystem : IInitSystem
     {
+        private readonly ShipSettings _settings;
+
+        public CreateShipSystem(ISettingsService settings) => 
+            _settings = settings.Ship;
+
         public void Init(EcsWorld world)
         {
             var ship = CreateShip(world);
@@ -33,17 +39,17 @@ namespace Asteroids.Domain.Systems
                 .Add<PlayerLayer>()
                 .Add<LaserShootsCount>();
 
-        private static void Setup(Entity ship)
+        private void Setup(Entity ship)
         {
-            ship.Get<ViewTag>().Tag = Tag.SpaceShip;
-            ship.Get<MaxVelocity>().Amount = 18f;
-            ship.Get<RotationSpeed>().Amount = 180f;
-            ship.Get<AccelerationSpeed>().Amount = 15f;
-            ship.Get<Friction>().Amount = 15f;
-            ship.Get<CircleCollider>().Radius = 2f;
+            ship.Get<ViewTag>().Tag = _settings.Tag;
+            ship.Get<MaxVelocity>().Amount = _settings.MaxVelocity;
+            ship.Get<RotationSpeed>().Amount = _settings.RotationSpeed;
+            ship.Get<AccelerationSpeed>().Amount = _settings.AccelerationSpeed;
+            ship.Get<Friction>().Amount = _settings.Friction;
+            ship.Get<CircleCollider>().Radius = _settings.ColliderRadius;
             LaserShootsCount shootsCount = ship.Get<LaserShootsCount>();
-            shootsCount.Max = 5;
-            shootsCount.Left = 5;
+            shootsCount.Max = _settings.MaxLaserShoots;
+            shootsCount.Left = _settings.MaxLaserShoots;
         }
     }
 }

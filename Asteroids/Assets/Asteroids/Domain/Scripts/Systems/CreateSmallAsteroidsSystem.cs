@@ -13,9 +13,13 @@ namespace Asteroids.Domain.Systems
         private Filter _filter;
 
         private readonly IRandomService _random;
+        private readonly AsteroidSettings _settings;
 
-        public CreateSmallAsteroidsSystem(IRandomService random) => 
+        public CreateSmallAsteroidsSystem(IRandomService random, ISettingsService settings)
+        {
             _random = random;
+            _settings = settings.Asteroid;
+        }
 
         public void Init(EcsWorld world)
         {
@@ -38,7 +42,7 @@ namespace Asteroids.Domain.Systems
         {
             Vector2 position = entity.Get<Position>().Value;
 
-            for (int i = 0; i < Settings.SMALLER_ASTEROIDS_COUNT; i++) 
+            for (int i = 0; i < _settings.SmallerAsteroidsCount; i++) 
                 CreateSingleAsteroid(position);
         }
 

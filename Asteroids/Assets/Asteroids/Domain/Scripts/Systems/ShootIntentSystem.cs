@@ -8,12 +8,17 @@ namespace Asteroids.Domain.Systems
 {
     public class ShootIntentSystem : IInitSystem, IUpdateSystem
     {
-        private readonly IInputService _inputService;
         private EcsWorld _world;
         private Filter _shootFilter;
 
-        public ShootIntentSystem(IInputService inputService) => 
+        private readonly IInputService _inputService;
+        private readonly ShipSettings _settings;
+
+        public ShootIntentSystem(IInputService inputService, ISettingsService settings)
+        {
             _inputService = inputService;
+            _settings = settings.Ship;
+        }
 
         public void Init(EcsWorld world)
         {
@@ -39,14 +44,14 @@ namespace Asteroids.Domain.Systems
 
         private void CreateIntent(Entity entity)
         {
-            entity.CreateSpawnPosition(_world, true, out var intentEntity);
+            entity.CreateSpawnPosition(_world, _settings.ShotOffset, true, out var intentEntity);
             intentEntity.Add<CreateBulletIntent>();
         }
 
-        private static void AddCooldown(Entity entity)
+        private void AddCooldown(Entity entity)
         {
             entity.Add<ShootCooldown>();
-            entity.Get<ShootCooldown>().Time = .25f;
+            entity.Get<ShootCooldown>().Time = _settings.ShootCooldown;
         }
     }
 }

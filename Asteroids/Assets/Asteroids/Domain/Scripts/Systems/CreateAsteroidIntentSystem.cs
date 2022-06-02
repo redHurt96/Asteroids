@@ -6,36 +6,39 @@ namespace Asteroids.Domain.Systems
 {
     public class CreateAsteroidIntentSystem : IInitSystem, IUpdateSystem
     {
-        private readonly ITimeService _timeService;
-        private readonly IMapBorderService _mapBorderService;
-        private readonly IRandomService _randomService;
+        private readonly ITimeService _time;
+        private readonly IMapBorderService _map;
+        private readonly IRandomService _random;
+        private readonly AsteroidSettings _settings;
         private float _currentTime;
         private EcsWorld _world;
 
         public CreateAsteroidIntentSystem(
-            ITimeService timeService,
-            IMapBorderService mapBorderService,
-            IRandomService randomService)
+            ITimeService time,
+            IMapBorderService map,
+            IRandomService random,
+            ISettingsService settings)
         {
-            _timeService = timeService;
-            _mapBorderService = mapBorderService;
-            _randomService = randomService;
+            _time = time;
+            _map = map;
+            _random = random;
+            _settings = settings.Asteroid;
         }
 
         public void Init(EcsWorld world)
         {
             _world = world;
-            _currentTime = Settings.ASTEROIDS_SPAWN_TIME;
+            _currentTime = _settings.SpawnTime;
         }
 
         public void Update()
         {
-            _currentTime -= _timeService.DeltaTime;
+            _currentTime -= _time.DeltaTime;
 
             if (_currentTime <= 0f)
             {
                 CreateSpawnIntent();
-                _currentTime = Settings.ASTEROIDS_SPAWN_TIME;
+                _currentTime = _settings.SpawnTime;
             }
         }
 
@@ -44,7 +47,7 @@ namespace Asteroids.Domain.Systems
             var entity = _world.NewEntity().Add<CreateAsteroidIntent>();
             var intent = entity.Get<CreateAsteroidIntent>();
 
-            intent.Point = _randomService.RandomPosition(_mapBorderService.Width, _mapBorderService.Height);
+            intent.Point = _random.RandomPosition(_map.Width, _map.Height);
         }
     }
 }
