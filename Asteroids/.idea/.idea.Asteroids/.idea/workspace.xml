@@ -2,109 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="352b035a-4424-4c11-9933-4598baefaa0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Common/Ship.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/Common/Ship.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/SpaceShip/LaserShootsCount.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/SpaceShip/LaserShootsCount.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/SpaceShip/RestoreLaserShootTimer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Components/SpaceShip/RestoreLaserShootTimer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/UpdateLaserRestoreShootSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/UpdateLaserRestoreShootSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/UpdateLaserShootsCountSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/UpdateLaserShootsCountSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Components/AngleObserver.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Components/AngleObserver.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Components/CoordinatesObserver.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Components/CoordinatesObserver.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Components/LaserShootsCountObserver.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Components/LaserShootsCountObserver.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Components/RestoreLaserShootObserver.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Components/RestoreLaserShootObserver.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Components/VelocityObserver.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Components/VelocityObserver.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/MonoBehaviours/ValuePanel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/MonoBehaviours/ValuePanel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateAnglePanelSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateAnglePanelSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateCoordinatePanelSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateCoordinatePanelSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateLaserShootRestorePanelSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateLaserShootRestorePanelSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateLaserShootsCountPanelSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateLaserShootsCountPanelSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateVelocityPanelSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/CreateVelocityPanelSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/UpdateAnglePanelSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/UpdateAnglePanelSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/UpdateCoordinatesPanelSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/UpdateCoordinatesPanelSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/UpdateLaserShootsCountPanelSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/UpdateLaserShootsCountPanelSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/UpdateRestoreLaserShootPanelSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/UpdateRestoreLaserShootPanelSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/UpdateVelocityPanelSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/Systems/UpdateVelocityPanelSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/UiBootstrapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Asteroids/Presentation/UI/Scripts/UiBootstrapper.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Bootstrap/Scripts/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/ModelBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/ModelBootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateLaserSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateLaserSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateShipSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/CreateShipSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/LaserIntentSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asteroids/Domain/Scripts/Systems/LaserIntentSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Materials/Laser.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Materials/Laser.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/Asteroid.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/Asteroid.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/Bullet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/Bullet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/DefaultView.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/DefaultView.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/LaserView.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/LaserView.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/SpaceShip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/SpaceShip.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/Ufo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Resources/Ufo.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Asteroids.Presentation.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Asteroids.Presentation.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/DisposeViewObserver.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/DisposeViewObserver.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/ImaginaryRotation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/ImaginaryRotation.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/LaserView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/LaserView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/ObjectView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/ObjectView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/View.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Components/View.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/PresentationBootstrapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/PresentationBootstrapper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/AssignImaginaryRotationSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/AssignImaginaryRotationSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/CreateLaserViewSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/CreateLaserViewSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/CreateViewSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/CreateViewSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/DestroyViewSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/DestroyViewSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/ImaginaryRotateSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/ImaginaryRotateSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/RayColliderDebugViewSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/RayColliderDebugViewSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/SphereColliderDebugViewSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/SphereColliderDebugViewSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/UpdateViewSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asteroids/Presentation/Scripts/Systems/UpdateViewSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +86,7 @@
       <workItem from="1654070452384" duration="3968000" />
       <workItem from="1654096018868" duration="3838000" />
       <workItem from="1654109480324" duration="5641000" />
-      <workItem from="1654119994831" duration="8078000" />
+      <workItem from="1654119994831" duration="8455000" />
     </task>
     <servers />
   </component>
